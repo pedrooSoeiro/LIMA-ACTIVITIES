@@ -30,23 +30,9 @@ Buscando uma oportunidade como **Desenvolvedor Backend**,
 
 ---
 
-## Projetos Desenvolvidos
-
-### [Nome do Primeiro Projeto](https://github.com/seu-usuario/nome-do-repositorio-1)
-* **Descrição:** Breve explicação do problema que a aplicação resolve e como ela funciona.
-* **Tecnologias utilizadas:** HTML, CSS, JavaScript.
-* **Demonstração:** [Acessar Projeto Online](https://seu-usuario.github.io/nome-do-repositorio-1)
-
-### [Nome do Segundo Projeto](https://github.com/seu-usuario/nome-do-repositorio-2)
-* **Descrição:** Breve explicação das principais funcionalidades desenvolvidas.
-* **Tecnologias utilizadas:** HTML, Markdown, Git.
-* **Demonstração:** [Ver Código no GitHub](https://github.com/seu-usuario/nome-do-repositorio-2)
-
----
-
 ## Cursos Complementares
-* **Administrador de Banco de Dados** — *[SENAI]* (Carga horária: 20h)
-* **Desenvolvimento Web Front-End** — *[Nome da Plataforma/Escola]* (Carga horária: 40h)
+* **Administrador de Banco de Dados** — *[SENAI]* (Carga horária: 160h)
+* **Ingles** — *[KUMON]* (Carga horária:)
 
 ---
 
