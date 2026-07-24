@@ -1,30 +1,36 @@
-# [Pedro Antônio Amaral Soeiro]
+# Pedro Antônio Amaral Soeiro
 
-**[Sua Cidade] - [Seu Estado]** | [pr1004566@gmail.com](mailto:pr1004566@gmail.com) | [(19) 98286-2341].  
+**[Súmare] - [São Paulo]** | [pr1004566@gmail.com](mailto:pr1004566@gmail.com) | [(19) 98286-2341].  
 [LinkedIn](https://www.linkedin.com/in/pedroosoeiro/) • [GitHub](https://github.com/seu-usuario)
 
 ---
 
-## 🎯 Objetivo Profissional
-Buscando uma oportunidade como **Desenvolvedor(a) Front-End Junior** (ou a sua área de interesse), focado(a) em aplicar conhecimentos em HTML5, CSS3, JavaScript e controle de versão com Git na criação de interfaces modernas, acessíveis e eficientes.
+## Objetivo Profissional
+Buscando uma oportunidade como **Desenvolvedor Backend**, 
 
 ---
 
-## 🎓 Formação Acadêmica
-* **[Nome do Seu Curso]**  
-  *[Nome da Faculdade ou Instituição]*  
-  *Previsão de conclusão: [Mês/Ano]*
+## Formação Acadêmica
+* **[Técnico em desenvolvimento de sistemas]**  
+  *[SENAI]*  
+  *Previsão de conclusão: [12/27]*
+
+  ## Formação Acadêmica
+* **[Ensino Médio]**  
+  *[SESI]*  
+  *Previsão de conclusão: [12/27]*
 
 ---
 
-## 🛠️ Conhecimentos Técnicos
-* **Linguagens de Marcação & Estilização:** HTML5, CSS3, Markdown
-* **Linguagens de Programação:** JavaScript (ES6+)
+## Conhecimentos Técnicos
+* **Linguagens de Marcação & Estilização:** HTML5, Markdown
+* **Linguagens de Programação:** JavaScript
 * **Ferramentas & Controle de Versão:** Git, GitHub, VS Code
+* **Banco de Dados:** SQL Server
 
 ---
 
-## 🚀 Projetos Desenvolvidos
+## Projetos Desenvolvidos
 
 ### [Nome do Primeiro Projeto](https://github.com/seu-usuario/nome-do-repositorio-1)
 * **Descrição:** Breve explicação do problema que a aplicação resolve e como ela funciona.
@@ -38,13 +44,13 @@ Buscando uma oportunidade como **Desenvolvedor(a) Front-End Junior** (ou a sua �
 
 ---
 
-## 📚 Cursos Complementares
-* **Git e GitHub do Zero ao Avançado** — *[Nome da Plataforma/Escola]* (Carga horária: 20h)
+## Cursos Complementares
+* **Administrador de Banco de Dados** — *[SENAI]* (Carga horária: 20h)
 * **Desenvolvimento Web Front-End** — *[Nome da Plataforma/Escola]* (Carga horária: 40h)
 
 ---
 
-## 💡 Competências (Soft Skills)
+## Competências (Soft Skills)
 * Resolução de problemas e lógica de programação
 * Trabalho em equipe e comunicação clara
 * Gestão de tempo e organização pessoal
@@ -52,7 +58,7 @@ Buscando uma oportunidade como **Desenvolvedor(a) Front-End Junior** (ou a sua �
 
 ---
 
-## 🌐 Idiomas
+## Idiomas
 * **Português:** Nativo
 * **Inglês:** Leitura técnica e escrita intermediária
 
