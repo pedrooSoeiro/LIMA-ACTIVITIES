@@ -6,7 +6,7 @@
 ---
 
 ## Objetivo Profissional
-Buscando uma oportunidade como **Desenvolvedor Backend**, 
+Buscando uma oportunidade como **Desenvolvedor Backend** / **Desenvolvedor FullStack** júnior ou estagiário, para poder colocar em pratica meus conhecimentos dentro da área que tenho gosto de aprender cada dia mais. 
 
 ---
 
@@ -14,6 +14,11 @@ Buscando uma oportunidade como **Desenvolvedor Backend**,
 * **[Técnico em desenvolvimento de sistemas]**  
   *[SENAI]*  
   *Previsão de conclusão: [12/27]*
+
+## Formação Acadêmica
+* *[Técnico em biotecnologia]*  
+  *[ETECAP]*  
+  *Previsão de conclusão: [06/27]*
 
   ## Formação Acadêmica
 * **[Ensino Médio]**  
@@ -27,12 +32,13 @@ Buscando uma oportunidade como **Desenvolvedor Backend**,
 * **Linguagens de Programação:** JavaScript
 * **Ferramentas & Controle de Versão:** Git, GitHub, VS Code
 * **Banco de Dados:** SQL Server
+* **Inteligência Artificial:** Engenharia de Prompts, aplicação e integração de IA generativa no fluxo de desenvolvimento (LLMs)
 
 ---
 
 ## Cursos Complementares
-* **Administrador de Banco de Dados** — *[SENAI]* (Carga horária: 160h)
-* **Ingles** — *[KUMON]* (Carga horária:)
+* **Administrador de Banco de Dados** — *[SENAI]* Finalizado (Carga horária: 160h)
+* **Inglês** — *[KUMON]* Finalizado (Carga horária: indefinida) 
 
 ---
 
@@ -46,9 +52,9 @@ Buscando uma oportunidade como **Desenvolvedor Backend**,
 
 ## Idiomas
 * **Português:** Nativo
-* **Inglês:** Leitura técnica e escrita intermediária
+* **Inglês:** Leitura: Avançada / Conversação: Avançada
 
 ---
 
-## 💼 Experiência Profissional
-*Em busca da primeira oportunidade profissional na área de tecnologia / Em transição de carreira.*
+## Experiência Profissional
+*Em busca da primeira oportunidade profissional na área de tecnologia.*
