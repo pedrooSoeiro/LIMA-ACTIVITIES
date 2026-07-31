@@ -1,7 +1,7 @@
 # Pedro Antônio Amaral Soeiro
 
 **[Súmare] - [São Paulo]** | [pr1004566@gmail.com](mailto:pr1004566@gmail.com) | [(19) 98286-2341].  
-[LinkedIn](https://www.linkedin.com/in/pedroosoeiro/) • [GitHub](https://github.com/seu-usuario)
+[LinkedIn](https://www.linkedin.com/in/pedroosoeiro/) • [GitHub](https://github.com/pedrooSoeiro)
 
 ---
 
