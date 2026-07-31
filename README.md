@@ -38,7 +38,8 @@ Buscando uma oportunidade como **Desenvolvedor Backend** / **Desenvolvedor FullS
 
 ## Cursos Complementares
 * **Administrador de Banco de Dados** — *[SENAI]* Finalizado (Carga horária: 160h)
-* **Inglês** — *[KUMON]* Finalizado (Carga horária: indefinida) 
+* **Inglês** — *[KUMON]* Finalizado (Carga horária: indefinida)
+* **Fluência - Fundamentos da Inteligência Artificial** — *[SENAI]* Finalizado (Carga horária: 8h)
 
 ---
 
