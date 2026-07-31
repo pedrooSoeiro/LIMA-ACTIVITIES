@@ -52,6 +52,14 @@ Buscando uma oportunidade como **Desenvolvedor Backend** / **Desenvolvedor FullS
 
 ---
 
+## Projetos e Participações 
+* Resolução de problemas e lógica de programação
+* Trabalho em equipe e comunicação clara
+* Gestão de tempo e organização pessoal
+* Aprendizado contínuo e proatividade
+
+---
+
 ## Idiomas
 * **Português:** Nativo
 * **Inglês:** Leitura: Avançada / Conversação: Avançada
