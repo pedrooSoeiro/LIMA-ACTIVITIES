@@ -40,6 +40,7 @@ Buscando uma oportunidade como **Desenvolvedor Backend** / **Desenvolvedor FullS
 * **Administrador de Banco de Dados** — *[SENAI]* Finalizado (Carga horária: 160h)
 * **Inglês** — *[KUMON]* Finalizado (Carga horária: indefinida)
 * **Fluência - Fundamentos da Inteligência Artificial** — *[SENAI]* Finalizado (Carga horária: 8h)
+* **Ética - Na Inteligência Artificial** — *[SENAI]* Finalizado (Carga horária: 4h)
 
 ---
 
