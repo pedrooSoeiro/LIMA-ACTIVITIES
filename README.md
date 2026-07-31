@@ -53,10 +53,10 @@ Buscando uma oportunidade como **Desenvolvedor Backend** / **Desenvolvedor FullS
 ---
 
 ## Projetos e Participações 
-* Resolução de problemas e lógica de programação
-* Trabalho em equipe e comunicação clara
-* Gestão de tempo e organização pessoal
-* Aprendizado contínuo e proatividade
+ * Participação no Grand Prix de inovação SENAI
+   
+ <img width="550" height="350" alt="image" src="https://github.com/user-attachments/assets/c1120a71-e090-467e-9bb1-c6dbfd5339fd" />
+
 
 ---
 
