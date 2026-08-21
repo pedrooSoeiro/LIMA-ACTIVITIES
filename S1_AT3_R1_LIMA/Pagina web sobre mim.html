@@ -5,9 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maldição dos Dev</title>
-    <link rel="stylesheet" href="C:\Users\I1HSD\LIMA-ACTIVITIES\S1_AT3_R1_LIMA\assets\css\estilo_paginaWeb.css">
+    
     <style>
-        Footer {
+        /* CSS do Corpo e Textos (Antigo arquivo externo) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: bisque;
+            font-size: 20px;
+        }
+
+        .sub-titulo {
+            color: rgb(216, 96, 96);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 30px;
+        }
+
+        #paragrafo {
+            color: rgb(187, 105, 105);
+            font-size: 75px;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #paragrafo_01 {
+            color: rgb(187, 105, 105);
+            font-size: 30px;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* CSS do Rodapé (Já estava no HTML) */
+        footer {
             background-color: #fab2b2;
             padding: 20px;
             text-align: center;
@@ -15,10 +43,8 @@
             margin: 20px auto;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-
         }
     </style>
-
 </head>
 
 <body>
@@ -28,67 +54,51 @@
     </h1>
 
     <h2 id="paragrafo_01">Meu nome é Pedro Antonio, sou estudante de desenvolvimento de sistemas, e estou aprendendo<br>
-        a criar paginas web com
-        HTML.<br></h2>
+        a criar paginas web com HTML.<br>
+    </h2>
 
-    <h3 id="sub-titulo">
+    <h3 class="sub-titulo">
         Agora eu vou falar um pouco sobre mim e minhas experiências:
     </h3>
 
-
     <section>
         <ul>
-            <p>
-                <li>Já fiz um curso de administrador de banco de dados aqui no SENAI mesmo </li>
-
-                <li>Estou cursando dois tecnicos: DS e Biotecnologia</li>
-
-                <li>Já terminei meu curso de inglês no KUMON, mas não parei de estudar não em</li>
-
-            </p>
+            <li>Já fiz um curso de administrador de banco de dados aqui no SENAI mesmo</li>
+            <li>Estou cursando dois tecnicos: DS e Biotecnologia</li>
+            <li>Já terminei meu curso de inglês no KUMON, mas não parei de estudar não em</li>
+        </ul>
     </section>
 
-    <h3 id="sub-titulo">
+    <h3 class="sub-titulo">
         Sobre meus hobbies:<br>
     </h3>
     <p>
         Gosto muito de jogar video game, assistir filmes e séries, e também gosto de estudar sobre tecnologia. Amo
         praticar esportes, principalmente futebol.<br> Gosto de sair com meus amigos e me divertir bastante. Mas o
-        melhor de tudo é passar tempo com a minha namorada e see divertir muitos juntinhos!
+        melhor de tudo é passar tempo com a minha namorada e se divertir muito juntinhos!
     </p>
-    <h3 id="sub-titulo">
+
+    <h3 class="sub-titulo">
         Sobre meus pensamentos de futuro profissional:<br>
     </h3>
-
     <p>
         Após conhecer a área de desenvolvimento de sistemas, percebi que é uma área que me atrai muito, e pretendo me
-        especializar nela. Quero
-        me tornar<br> um desenvolvedor full stack, e trabalhar em uma empresa de tecnologia, ou até mesmo criar minha
-        própria
-        empresa. Quero me tornar um profissional<br> de sucesso, e ajudar a minha família a ter uma vida melhor.
+        especializar nela. Quero me tornar<br> um desenvolvedor full stack, e trabalhar em uma empresa de tecnologia, ou até mesmo criar minha
+        própria empresa. Quero me tornar um profissional<br> de sucesso, e ajudar a minha família a ter uma vida melhor.
     </p>
 
-    <h3 id="sub-titulo">
+    <h3 class="sub-titulo">
         Sobre meus pensamentos de futuro pessoal:<br>
     </h3>
-
     <p>
         Quero me tornar uma pessoa melhor, e ajudar as pessoas ao meu redor. Quero ser feliz, e fazer as pessoas felizes
         também. Quero viajar pelo mundo,<br> conhecer novas culturas, e aprender coisas novas. Quero ter uma vida plena
-        e
-        realizada.
+        e realizada.
     </p>
+
+    <footer>
+        <p>&copy; 2026 Pedro Antonio. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
-<footer>
-    <p>&copy; 2026 Pedro Antonio. Todos os direitos reservados.</p>
-</footer>
-
 </html>
-
-<!-- 
-  BOAS PRÁTICAS DO CÓDIGO HTML:
-
-  Idioma e Padrão: <!DOCTYPE html> e <html lang="pt-br"> definem o HTML5 e o idioma português para leitores de voz.
-  Adaptabilidade: <meta name="viewport"> ajusta a página para telas de celular.
-  Acessibilidade: Títulos (<h1>, <h3>) e divisões (<section>, <footer>) ajudam leitores de voz a guiar o usuário pelo site.
-  Organização: Listas (<ul>, <li>) e blocos claros deixam o código fácil de ler e atualizar.
