@@ -1,0 +1,138 @@
+<!-- Utilizado para avisar o navegador que estamos utilizando o HTML5 -->
+<!DOCTYPE html>
+<!-- tag html é a raiz de todos os documentos HTML, e também está definindo português como língua -->
+<html lang="pt-br">
+
+<!-- Cabeçalho do Documento -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelGear eSports Store</title>
+
+    <!-- Google Fonts: Importação das fontes 'Orbitron' (Títulos Gamers) e 'Poppins' (Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Aplicação das fontes importadas nos elementos da página -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<!-- Etapa 4: Aplicação de atributos do Body para o Visual Gamer (Dark Mode) -->
+<body bgcolor="#0d0d12" text="#e0e0e0" link="#00ffcc" vlink="#ff007f" alink="#00e5ff">
+
+    <!-- Cabeçalho Principal do Site -->
+    <!-- Utilização da tag <em> para exibir em itálico -->
+    <!-- Utilização da tag <b> para exibir em negrito sem peso na semântica -->
+    <header>
+        <h1>PixelGear <em>eSports</em> Store</h1>
+        <p>Sua loja especializada em <b>hardware de extrema performance</b> e periféricos de nível profissional.</p>
+    </header>
+
+    <!-- Conteúdo Principal do Site -->
+    
+        <!-- Seção Sobre a PixelGear -->
+        <section id="institucional">
+            <h2>Sobre a PixelGear</h2>
+            
+            <!-- Essa tag article agrupa um bloco de conteúdo -->
+            <article>
+                <h3>Nossa Missão</h3>
+                <!-- Indica forte importância semântica a uma palavra ou trecho (exibe em negrito) -->
+                <p>Fornecer equipamentos de alta tecnologia para <strong>elevar o nível dos atletas de <i>eSports</i></strong> e gamers de alta performance.</p>
+            </article>
+
+            <article>
+                <h3>Nossos Valores</h3>
+                <!-- Uso da tag br para poder quebrar a linha -->
+                <p><strong>Qualidade extrema</strong> na montagem,<br>suporte especializado focado no cliente,<br>transparência e paixão pelo universo dos <em>games</em>.</p>
+            </article>
+        </section>
+
+        <!-- Seção do Catálogo de Produtos Gamers -->
+        <section id="produtos">
+            <h2>Catálogo de Produtos em Destaque</h2>
+            <p>Confira os 6 equipamentos de alta performance selecionados com <strong>ofertas imperdíveis</strong>:</p>
+
+            <!-- Item 1: PC Gamer -->
+            <article>
+                <h3>1. PC Gamer PixelGear Titan RTX</h3>
+                <h4>Categoria: Computadores Gamers</h4>
+                <p>
+                    <!-- Uso da tag s para aplicar um risco sobre a escrita desejada -->
+                    Preço: <s>R$ 12.999,00</s> por <strong>R$ 9.999,00</strong> à vista!<br>
+                    <!-- Uso da tag i para aplicar itálico -->
+                    <!-- Uso da tag sup para indicar sobrescrito -->
+                    Equipado com processador Intel Core <i>i9</i><sup>14ª</sup> Geração, placa de vídeo <b>NVIDIA GeForce RTX 4090</b> com suporte a <em>Ray Tracing</em> e sistema de resfriamento líquido H<sub>2</sub>O <i>Water Cooler</i>.
+                </p>
+            </article>
+
+            <!-- Item 2: Monitor Gamer -->
+            <article>
+                <h3>2. Monitor Gamer UltraWide 240Hz</h3>
+                <h4>Categoria: Monitores e Telas</h4>
+                <p>
+                    Preço: <strong>R$ 2.499,00</strong> em até <b>10x sem juros</b><br>
+                    Painel <i>OLED</i> com proporção <i>UltraWide</i>, taxa de atualização incrível de <b>240Hz</b> e tempo de resposta de apenas <b>1ms</b><sup>(GTG)</sup> para jogabilidade ultrarrápida.
+                </p>
+            </article>
+
+            <!-- Item 3: Teclado Mecânico -->
+            <article>
+                <h3>3. Teclado Mecânico RGB Pro Switch Red</h3>
+                <h4>Categoria: Periféricos</h4>
+                <p>
+                    Preço: <strong>R$ 499,00</strong><br>
+                    Acionamento linear ultrarrápido com <i>Switch Red</i>, tecnologia <em>Anti-ghosting</em> 100% <i>N-Key Rollover</i> e iluminação <b>RGB Customizável</b> por software.
+                </p>
+            </article>
+
+            <!-- Item 4: Mouse Gamer -->
+            <article>
+                <h3>4. Mouse Gamer Wireless Apex 26k DPI</h3>
+                <h4>Categoria: Periféricos</h4>
+                <p>
+                    Preço: <strong>R$ 359,00</strong><br>
+                    Sensor óptico <i>Apex Sensor</i> de alta precisão ajustável até <b>26.000</b><sub>DPI</sub>, frequência de 1.000<sup>Hz</sup> e peso ultra-leve de apenas <b>55g</b> sem cabo (<i>Wireless</i> sem latência).
+                </p>
+            </article>
+
+            <!-- Item 5: Headset Gamer -->
+            <article>
+                <h3>5. Headset Gamer Surround 7.1 Spatial Audio</h3>
+                <h4>Categoria: Áudio Gamer</h4>
+                <p>
+                    Preço: <strong>R$ 599,00</strong><br>
+                    Imersão sonora <i>Surround</i> 7.1<sup>Pro</sup> de 360 graus com drivers Neodímio de <b>50mm</b> e microfone com cancelamento de ruído <em>Noise Cancelling</em>.
+                </p>
+            </article>
+
+            <!-- Item 6: Cadeira Gamer -->
+            <article>
+                <h3>6. Cadeira Gamer Ergonômica Pro Racing</h3>
+                <h4>Categoria: Acessórios e Ergonomia</h4>
+                <p>
+                    Preço: <strong>R$ 1.299,00</strong><br>
+                    Conforto prolongado com apoio de braço ajustável <b>4D</b>, estrutura em aço reforçado e reclinável em até <b>180<sup>°</sup></b> com pistão de elevação classe 4<sub>MAX</sub>.
+                </p>
+            </article>
+
+        </section>
+
+
+    <!-- Rodapé do Documento -->
+    <footer>
+        <p>&copy; 2026 PixelGear eSports Store - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
