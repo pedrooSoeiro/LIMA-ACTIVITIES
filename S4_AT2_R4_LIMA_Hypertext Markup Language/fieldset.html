@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela do Cliente</title>
+</head>
+<body>
+    <h1>Fildset 1</h1>
+    <hr>
+
+<!--Grupo 1 dados do cliente em fildset-->
+    
+    <fildset>
+        <legend><strong>1. Dados do Cliente</strong></legend>
+        <p>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome aqui."> <required>
+        </p>
+
+        <p>
+            <label for="e-mail">E-mail:</label>
+            <input type="text" name="e-mail" id="e-mail" placeholder="Digite seu e-mail aqui."> <required>
+        </p>
+
+        <p>
+            <label for="WhatsApp">WhatsApp:</label>
+            <input type="tel" name="WhatsApp" id="WhatsApp" placeholder="(19) 99999-9999"> <required>
+        </p>
+    </fildset>
+
+    <fieldset>
+        <legend><strong>2. Referências do hardware</strong></legend>
+        <p>
+            <label for="gpu"> Escolha a Placa de Vídeo:</label>
+            <select id="gpu" name="gpu"><required>
+                <option value="rtx_4090">RTX 4090</option>
+                <option value="rtx_4080">RTX 4080</option>
+                <option value="rtx_4070">RTX 4070</option>
+                <option value="rtx_4060">RTX 4060</option>
+                <option value="rx_7900_xtx">RX 7900 XTX</option>
+                <option value="rx_7900_xt">RX 7900 XT</option>
+            </select>
+        </p>
+    </fieldset>
+    
+    <fieldset>
+        <strong>Serviços e Adicionais Desejados</strong>
+       
+          <input type="radio" name="objetivo" id="jogos" value="jogos">
+            <label for="jogos">Jogos Eletrônicos</label>
+
+            <input type="radio" name="objetivo" id="streaming" value="streaming">
+            <label for="streaming">Streaming</label>
+
+            <input type="radio" name="objetivo" id="trabalho" value="trabalho">
+            <label for="trabalho">Trabalho</label>
+    </fieldset>
+
+    <fieldset>
+        <strong>Serviços e Adicionais Desejados</strong>
+       
+          <input type="checkbox" name="Adicionais" id="rgb" value="rgb">
+            <label for="rgb">RGB</label>
+
+            <input type="checkbox" name="Adicionais" id="overclock" value="overclock">
+            <label for="overclock">Overclock</label>
+
+            <input type="checkbox" name="Adicionais" id="garantia" value="garantia">
+            <label for="garantia">Garantia Estendida</label>
+    </fieldset>
+
+    <br><label for="observacoes">Observações ou Dúvidas Frequêntes:</label><br>
+    <textarea id="observacoes" name="observacoes" rows="4" cols="50" placeholder="Digite aqui suas observações ou dúvidas sobre nossa loja:"></textarea>
+
+    <br><label for="foto_referencia">Anexar prints ou foto de referência:</label><br>
+    <input type="file" id="foto_referencia" name="foto_referencia" accept="image/*">
+
+    <p>
+        <fieldset>
+        <button type="submit">ENVIAR SOLICITAÇÃO DE ORÇAMENTO</button>
+        <button type="submit">LIMPAR FORMULÁRIO</button>
+        </fieldset>
+    </p>
+
+
+</body>
+</html>
