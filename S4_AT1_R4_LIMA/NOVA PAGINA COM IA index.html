@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PixelGear eSports Store - Hardware de extrema performance, PCs Gamers de elite e periféricos profissionais.">
+    <title>PixelGear eSports Store | Hardware & High Performance</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#050914',
+                            card: '#0c1327',
+                            surface: '#111a33',
+                            cyan: '#00f0ff',
+                            'cyan-glow': 'rgba(0, 240, 255, 0.4)',
+                            blue: '#1d4ed8',
+                            accent: '#ff007f'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Cyberpunk & Glassmorphism Aesthetics -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050914;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+            border: 1px solid #00f0ff;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(12, 19, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 240, 255, 0.15);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+        }
+
+        /* Neon Text & Glow effects */
+        .text-neon-cyan {
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        .neon-glow-btn {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .neon-glow-btn:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Animated Grid Background */
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+        }
+
+        /* Custom Checkbox & Radio Styling */
+        input[type="checkbox"]:checked, input[type="radio"]:checked {
+            accent-color: #00f0ff;
+        }
+
+        /* Pulse Badge Animation */
+        @keyframes pulse-cyan {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+        .animate-pulse-cyan {
+            animation: pulse-cyan 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-cyan selection:text-brand-dark flex flex-col min-h-screen">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-24 right-5 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- STICKY NAVBAR -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-cyan to-blue-600 flex items-center justify-center text-brand-dark font-black text-xl shadow-[0_0_15px_rgba(0,240,255,0.5)] group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <span class="font-orbitron font-extrabold text-xl sm:text-2xl tracking-wider text-white">
+                    PIXEL<span class="text-brand-cyan">GEAR</span>
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#sobre" class="hover:text-brand-cyan transition-colors py-2">Sobre</a>
+                <a href="#produtos" class="hover:text-brand-cyan transition-colors py-2">Produtos</a>
+                <a href="#monte-seu-pc" class="hover:text-brand-cyan transition-colors py-2">Monte seu PC</a>
+                <a href="#orcamento" class="hover:text-brand-cyan transition-colors py-2">Orçamento</a>
+                <a href="#contato" class="hover:text-brand-cyan transition-colors py-2">Contato</a>
+            </nav>
+
+            <!-- Actions & Quote Badge -->
+            <div class="flex items-center gap-4">
+                <a href="#orcamento" class="relative flex items-center gap-2 bg-brand-surface hover:bg-slate-800 border border-brand-cyan/40 px-4 py-2.5 rounded-lg text-xs font-semibold tracking-wider text-white transition-all hover:border-brand-cyan">
+                    <i class="fa-solid fa-cart-shopping text-brand-cyan"></i>
+                    <span class="hidden sm:inline">COTAÇÃO</span>
+                    <span id="quote-counter" class="ml-1 bg-brand-cyan text-brand-dark px-2 py-0.5 rounded-full text-xs font-extrabold">0</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-brand-cyan text-2xl p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card/95 border-b border-brand-cyan/20 px-6 py-6 space-y-4">
+            <a href="#sobre" class="mobile-link block text-slate-300 hover:text-brand-cyan font-medium py-2">Sobre a PixelGear</a>
+            <a href="#produtos" class="mobile-link block text-slate-300 hover:text-brand-cyan font-medium py-2">Catálogo de Produtos</a>
+            <a href="#monte-seu-pc" class="mobile-link block text-slate-300 hover:text-brand-cyan font-medium py-2">Monte seu PC</a>
+            <a href="#orcamento" class="mobile-link block text-slate-300 hover:text-brand-cyan font-medium py-2">Solicitar Orçamento</a>
+            <a href="#contato" class="mobile-link block text-slate-300 hover:text-brand-cyan font-medium py-2">Contato</a>
+        </div>
+    </header>
+
+    <!-- HERO BANNER SECTION -->
+    <section class="relative min-h-[85vh] flex items-center justify-center cyber-grid overflow-hidden py-20 px-4">
+        <!-- Radial Glow Background Gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-brand-cyan/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="relative max-w-5xl mx-auto text-center space-y-8 z-10">
+            <!-- Tagline Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-cyan/30 text-brand-cyan text-xs sm:text-sm font-orbitron tracking-widest uppercase shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+                HARDWARE DE EXTREMA PERFORMANCE & ESPORTS
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="font-orbitron text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight tracking-tight">
+                DOMINE O JOGO COM <br>
+                <span class="bg-gradient-to-r from-brand-cyan via-blue-400 to-indigo-500 bg-clip-text text-transparent">
+                    PERFORMANCE DE ELITE
+                </span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg leading-relaxed">
+                Computadores gamers montados com precisão artesanal, periféricos com resposta ultrarrápida e suporte técnico especializado para atletas de eSports e entusiastas.
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#monte-seu-pc" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 text-brand-dark font-orbitron font-extrabold tracking-wider neon-glow-btn flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-sliders"></i>
+                    MONTAR PC DOS SONHOS
+                </a>
+                <a href="#produtos" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white font-orbitron font-bold tracking-wider hover:bg-slate-800/80 hover:border-brand-cyan transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-boxes-stacked text-brand-cyan"></i>
+                    VER CATÁLOGO
+                </a>
+            </div>
+
+            <!-- Metrics / Highlights Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 max-w-4xl mx-auto">
+                <div class="glass-panel p-4 rounded-xl text-center">
+                    <div class="font-orbitron font-extrabold text-2xl text-brand-cyan">+5.000</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">PCs Montados</div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl text-center">
+                    <div class="font-orbitron font-extrabold text-2xl text-brand-cyan">240Hz+</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Pronto pra Competir</div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl text-center">
+                    <div class="font-orbitron font-extrabold text-2xl text-brand-cyan">2 ANOS</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Garantia VIP</div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl text-center">
+                    <div class="font-orbitron font-extrabold text-2xl text-brand-cyan">24H</div>
+                    <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Teste de Estresse</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- SOBRE A PIXELGEAR SECTION -->
+        <section id="sobre" class="scroll-mt-28 space-y-10">
+            <div class="text-center space-y-3">
+                <h2 class="font-orbitron text-3xl sm:text-4xl font-extrabold text-white tracking-wide">
+                    SOBRE A <span class="text-brand-cyan">PIXELGEAR</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-cyan to-transparent mx-auto"></div>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
+                    Nossa trajetória é impulsionada pela paixão pela alta tecnologia e busca incansável pela vantagem competitiva.
+                </p>
+            </div>
+
+            <!-- Cards Grid: Missão, Valores, Diferenciais -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Missão -->
+                <article class="glass-panel glass-panel-hover p-8 rounded-2xl space-y-4 transition-all duration-300 relative group overflow-hidden">
+                    <div class="w-14 h-14 rounded-xl bg-blue-950/80 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-crosshair"></i>
+                    </div>
+                    <h3 class="font-orbitron text-xl font-bold text-white">Nossa Missão</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Fornecer equipamentos e hardware de ponta projetados para elevar o nível de atletas de <strong>eSports</strong> e entusiastas de alta performance.
+                    </p>
+                </article>
+
+                <!-- Card 2: Valores -->
+                <article class="glass-panel glass-panel-hover p-8 rounded-2xl space-y-4 transition-all duration-300 relative group overflow-hidden">
+                    <div class="w-14 h-14 rounded-xl bg-blue-950/80 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-orbitron text-xl font-bold text-white">Nossos Valores</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Qualidade artesanal na montagem, testes rigorosos de <i>benchmarking</i>, suporte dedicado pós-venda, transparência total e paixão pela cultura gamer.
+                    </p>
+                </article>
+
+                <!-- Card 3: Produtos & Diferencial -->
+                <article class="glass-panel glass-panel-hover p-8 rounded-2xl space-y-4 transition-all duration-300 relative group overflow-hidden">
+                    <div class="w-14 h-14 rounded-xl bg-blue-950/80 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="font-orbitron text-xl font-bold text-white">Ecossistema Completo</h3>
+                    <ul class="text-slate-300 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan text-xs"></i> Computadores Gamers Sob Medida</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan text-xs"></i> Monitores Alta Taxa de Atualização</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan text-xs"></i> Periféricos Ultra-Precisos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-cyan text-xs"></i> Ergonomia Pro para Longas Maratona</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Interactive Preview Table: Lancamentos em Breve -->
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-orbitron text-lg sm:text-xl font-bold text-brand-cyan flex items-center gap-3">
+                            <i class="fa-solid fa-fire text-amber-400"></i>
+                            NOVIDADES EM PRÉ-VENDA & REPOSIÇÃO
+                        </h3>
+                        <p class="text-xs text-slate-400">Lista atualizada dos hardwares mais disputados do mercado gamer</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-blue-950 text-brand-cyan text-xs font-semibold border border-brand-cyan/30 self-start sm:self-auto">
+                        Estoque 2026
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-700/80 bg-slate-900/60 text-brand-cyan font-orbitron uppercase">
+                                <th class="p-3.5">Produto</th>
+                                <th class="p-3.5">Descrição Tech</th>
+                                <th class="p-3.5">Preço</th>
+                                <th class="p-3.5">Marca</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="p-3.5 font-bold text-white">Placa de Vídeo RTX 3080</td>
+                                <td class="p-3.5 text-slate-400">Arquitetura Ampere, Ray Tracing & DLSS para jogos em 4K.</td>
+                                <td class="p-3.5 font-bold text-brand-cyan">R$ 7.499,00</td>
+                                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-200">NVIDIA</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="p-3.5 font-bold text-white">Mouse Razer DeathAdder V2</td>
+                                <td class="p-3.5 text-slate-400">Sensor óptico de 20.000 DPI e switches ópticos de 2ª gen.</td>
+                                <td class="p-3.5 font-bold text-brand-cyan">R$ 299,90</td>
+                                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-200">Razer</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="p-3.5 font-bold text-white">Teclado Corsair K95 RGB</td>
+                                <td class="p-3.5 text-slate-400">Switches Cherry MX, teclas macro dedicadas e chassi de alumínio.</td>
+                                <td class="p-3.5 font-bold text-brand-cyan">R$ 1.199,00</td>
+                                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-200">Corsair</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition-colors">
+                                <td class="p-3.5 font-bold text-white">Headset HyperX Cloud II</td>
+                                <td class="p-3.5 text-slate-400">Surround Sound 7.1 virtual, drivers de 53mm e almofadas Memory Foam.</td>
+                                <td class="p-3.5 font-bold text-brand-cyan">R$ 499,90</td>
+                                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-200">HyperX</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT CATALOG GRID SECTION -->
+        <section id="produtos" class="scroll-mt-28 space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-3">
+                    <h2 class="font-orbitron text-3xl sm:text-4xl font-extrabold text-white tracking-wide">
+                        CATÁLOGO DE <span class="text-brand-cyan">DESTAQUES</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base">
+                        Selecione os melhores equipamentos testados e homologados pelo time PixelGear.
+                    </p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2" id="catalog-filters">
+                    <button data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-lg text-xs font-orbitron font-bold uppercase transition-all bg-brand-cyan text-brand-dark">Todos</button>
+                    <button data-filter="pcs" class="filter-btn px-4 py-2 rounded-lg text-xs font-orbitron font-bold uppercase transition-all glass-panel text-slate-300 hover:text-brand-cyan">PCs Gamers</button>
+                    <button data-filter="monitores" class="filter-btn px-4 py-2 rounded-lg text-xs font-orbitron font-bold uppercase transition-all glass-panel text-slate-300 hover:text-brand-cyan">Monitores</button>
+                    <button data-filter="perifericos" class="filter-btn px-4 py-2 rounded-lg text-xs font-orbitron font-bold uppercase transition-all glass-panel text-slate-300 hover:text-brand-cyan">Periféricos</button>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+
+                <!-- ITEM 1: PC GAMER TITAN -->
+                <div class="product-card glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300" data-category="pcs">
+                    <div class="relative p-6 bg-slate-900/60 border-b border-slate-800 flex justify-center group overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-brand-cyan text-brand-dark text-[10px] font-orbitron font-black uppercase tracking-wider">TOP DE LINHA</span>
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=80" 
+                             alt="PC Gamer PixelGear Titan RTX" 
+                             onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=PC+Gamer+Titan'"
+                             class="h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer img-modal-trigger">
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Computadores Gamers</span>
+                            <h3 class="font-orbitron text-lg font-bold text-white">1. PC Gamer PixelGear Titan RTX</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Processador Intel Core i9 14ª Geração, placa de vídeo <strong>NVIDIA GeForce RTX 4090</strong> com suporte a Ray Tracing e Water Cooler H<sub>2</sub>O de 360mm.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <ol class="text-xs text-slate-400 space-y-1">
+                                <li><i class="fa-solid fa-memory text-brand-cyan mr-1"></i> RAM: 64GB DDR5</li>
+                                <li><i class="fa-solid fa-hard-drive text-brand-cyan mr-1"></i> Armazenamento: SSD NVMe 2TB</li>
+                                <li><i class="fa-solid fa-microchip text-brand-cyan mr-1"></i> Placa-mãe: Z790 Gaming Pro</li>
+                                <li><i class="fa-solid fa-plug text-brand-cyan mr-1"></i> Fonte: 1000W 80 Plus Gold</li>
+                            </ol>
+                            <div class="flex items-baseline justify-between pt-2">
+                                <div>
+                                    <span class="text-xs text-slate-400 line-through">R$ 12.999,00</span>
+                                    <div class="font-orbitron font-black text-xl text-brand-cyan">R$ 9.999,00</div>
+                                </div>
+                                <span class="text-[10px] text-slate-400 uppercase">À vista no PIX</span>
+                            </div>
+                            <button data-product="PC Gamer PixelGear Titan RTX" data-price="9999" class="add-to-quote-btn w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-brand-cyan text-brand-dark font-orbitron font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Adicionar ao Orçamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 2: MONITOR ULTRAWIDE 240HZ -->
+                <div class="product-card glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300" data-category="monitores">
+                    <div class="relative p-6 bg-slate-900/60 border-b border-slate-800 flex justify-center group overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-orbitron font-black uppercase tracking-wider">240Hz OLED</span>
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80" 
+                             alt="Monitor Gamer UltraWide 240Hz" 
+                             onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=Monitor+240Hz'"
+                             class="h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer img-modal-trigger">
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Monitores & Telas</span>
+                            <h3 class="font-orbitron text-lg font-bold text-white">2. Monitor UltraWide 240Hz</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Painel OLED Curvo com proporção 34" UltraWide, <strong>240Hz</strong> e tempo de resposta de <b>1ms (GTG)</b> para jogabilidade competitiva extrema.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <ol class="text-xs text-slate-400 space-y-1">
+                                <li><i class="fa-solid fa-tv text-brand-cyan mr-1"></i> Resolução: 3440x1440px</li>
+                                <li><i class="fa-solid fa-sync text-brand-cyan mr-1"></i> G-Sync & FreeSync Premium</li>
+                                <li><i class="fa-solid fa-cable text-brand-cyan mr-1"></i> HDMI 2.1 & DisplayPort 1.4</li>
+                                <li><i class="fa-solid fa-eye text-brand-cyan mr-1"></i> Curvatura 1500R Imersiva</li>
+                            </ol>
+                            <div class="flex items-baseline justify-between pt-2">
+                                <div>
+                                    <div class="font-orbitron font-black text-xl text-brand-cyan">R$ 2.499,00</div>
+                                </div>
+                                <span class="text-[10px] text-slate-400 uppercase">Em até 10x sem juros</span>
+                            </div>
+                            <button data-product="Monitor Gamer UltraWide 240Hz" data-price="2499" class="add-to-quote-btn w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-brand-cyan text-brand-dark font-orbitron font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Adicionar ao Orçamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 3: TECLADO MECÂNICO RGB -->
+                <div class="product-card glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300" data-category="perifericos">
+                    <div class="relative p-6 bg-slate-900/60 border-b border-slate-800 flex justify-center group overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-purple-600 text-white text-[10px] font-orbitron font-black uppercase tracking-wider">SWITCH RED</span>
+                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" 
+                             alt="Teclado Mecânico RGB Pro" 
+                             onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=Teclado+RGB'"
+                             class="h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer img-modal-trigger">
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Periféricos</span>
+                            <h3 class="font-orbitron text-lg font-bold text-white">3. Teclado Mecânico RGB Pro</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Acionamento linear com Switch Red de alta velocidade, tecnologia <strong>Anti-Ghosting 100% N-Key Rollover</strong> e iluminação RGB individual por tecla.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <ol class="text-xs text-slate-400 space-y-1">
+                                <li><i class="fa-solid fa-keyboard text-brand-cyan mr-1"></i> Teclas: 104 Mecânicas</li>
+                                <li><i class="fa-brands fa-usb text-brand-cyan mr-1"></i> Cabo USB-C Removível</li>
+                                <li><i class="fa-solid fa-sliders text-brand-cyan mr-1"></i> Software Macro Dedicado</li>
+                                <li><i class="fa-solid fa-cube text-brand-cyan mr-1"></i> Chassi Alumínio Anodizado</li>
+                            </ol>
+                            <div class="flex items-baseline justify-between pt-2">
+                                <div>
+                                    <div class="font-orbitron font-black text-xl text-brand-cyan">R$ 499,00</div>
+                                </div>
+                                <span class="text-[10px] text-slate-400 uppercase">Pronta Entrega</span>
+                            </div>
+                            <button data-product="Teclado Mecânico RGB Pro" data-price="499" class="add-to-quote-btn w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-brand-cyan text-brand-dark font-orbitron font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Adicionar ao Orçamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 4: MOUSE WIRELESS APEX 26K -->
+                <div class="product-card glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300" data-category="perifericos">
+                    <div class="relative p-6 bg-slate-900/60 border-b border-slate-800 flex justify-center group overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-emerald-500 text-brand-dark text-[10px] font-orbitron font-black uppercase tracking-wider">ULTRA-LEVE 55G</span>
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" 
+                             alt="Mouse Gamer Wireless Apex" 
+                             onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=Mouse+Wireless'"
+                             class="h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer img-modal-trigger">
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Periféricos</span>
+                            <h3 class="font-orbitron text-lg font-bold text-white">4. Mouse Wireless Apex 26k DPI</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Sensor óptico de ultra-precisão ajustável até <strong>26.000 DPI</strong>, taxa de polling de 1.000Hz e autonomia de bateria de 70h sem latência.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <ol class="text-xs text-slate-400 space-y-1">
+                                <li><i class="fa-solid fa-wifi text-brand-cyan mr-1"></i> Wireless 2.4GHz + Bluetooth</li>
+                                <li><i class="fa-solid fa-battery-full text-brand-cyan mr-1"></i> Autonomia de até 70 horas</li>
+                                <li><i class="fa-solid fa-weight-scale text-brand-cyan mr-1"></i> Peso Ultra-leve: 55g</li>
+                                <li><i class="fa-solid fa-hand-pointer text-brand-cyan mr-1"></i> Feet PTFE 100% Puro</li>
+                            </ol>
+                            <div class="flex items-baseline justify-between pt-2">
+                                <div>
+                                    <div class="font-orbitron font-black text-xl text-brand-cyan">R$ 359,00</div>
+                                </div>
+                                <span class="text-[10px] text-slate-400 uppercase">Sem fio sem lag</span>
+                            </div>
+                            <button data-product="Mouse Gamer Wireless Apex 26k DPI" data-price="359" class="add-to-quote-btn w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-brand-cyan text-brand-dark font-orbitron font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Adicionar ao Orçamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 5: HEADSET SURROUND 7.1 -->
+                <div class="product-card glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300" data-category="perifericos">
+                    <div class="relative p-6 bg-slate-900/60 border-b border-slate-800 flex justify-center group overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-cyan-500 text-brand-dark text-[10px] font-orbitron font-black uppercase tracking-wider">AUDIO 3D</span>
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80" 
+                             alt="Headset Gamer Surround 7.1" 
+                             onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=Headset+7.1'"
+                             class="h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer img-modal-trigger">
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Áudio Gamer</span>
+                            <h3 class="font-orbitron text-lg font-bold text-white">5. Headset Surround 7.1 Spatial</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Imersão espacial 360° com drivers Neodímio de <strong>50mm</strong> e microfone removível com cancelamento de ruído passivo e ativo.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <ol class="text-xs text-slate-400 space-y-1">
+                                <li><i class="fa-solid fa-headphones text-brand-cyan mr-1"></i> Drivers 50mm High-Res</li>
+                                <li><i class="fa-solid fa-microphone text-brand-cyan mr-1"></i> Noise Cancelling Mic</li>
+                                <li><i class="fa-solid fa-gamepad text-brand-cyan mr-1"></i> Multi-plataforma (PC/Consoles)</li>
+                                <li><i class="fa-solid fa-feather text-brand-cyan mr-1"></i> Espuma Viscoelástica Premium</li>
+                            </ol>
+                            <div class="flex items-baseline justify-between pt-2">
+                                <div>
+                                    <div class="font-orbitron font-black text-xl text-brand-cyan">R$ 599,00</div>
+                                </div>
+                                <span class="text-[10px] text-slate-400 uppercase">Áudio Competitivo</span>
+                            </div>
+                            <button data-product="Headset Gamer Surround 7.1 Spatial" data-price="599" class="add-to-quote-btn w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-brand-cyan text-brand-dark font-orbitron font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Adicionar ao Orçamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 6: CADEIRA GAMER PRO RACING -->
+                <div class="product-card glass-panel glass-panel-hover rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300" data-category="perifericos">
+                    <div class="relative p-6 bg-slate-900/60 border-b border-slate-800 flex justify-center group overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-brand-dark text-[10px] font-orbitron font-black uppercase tracking-wider">ERGONOMIA 4D</span>
+                        <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=600&q=80" 
+                             alt="Cadeira Gamer Pro Racing" 
+                             onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=Cadeira+Gamer'"
+                             class="h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer img-modal-trigger">
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-xs text-brand-cyan font-semibold uppercase tracking-wider">Ergonomia</span>
+                            <h3 class="font-orbitron text-lg font-bold text-white">6. Cadeira Gamer Pro Racing</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Estrutura reforçada de aço, apoios de braço com ajuste <strong>4D</strong>, reclinável em 180° e pistão a gás classe 4 suportando até 150kg.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-slate-800">
+                            <ol class="text-xs text-slate-400 space-y-1">
+                                <li><i class="fa-solid fa-chair text-brand-cyan mr-1"></i> Couro PU de alta resistência</li>
+                                <li><i class="fa-solid fa-angles-up text-brand-cyan mr-1"></i> Reclinável até 180°</li>
+                                <li><i class="fa-solid fa-weight-hanging text-brand-cyan mr-1"></i> Suporta até 150kg</li>
+                                <li><i class="fa-solid fa-shield text-brand-cyan mr-1"></i> Almofadas Lombar & Cervical</li>
+                            </ol>
+                            <div class="flex items-baseline justify-between pt-2">
+                                <div>
+                                    <div class="font-orbitron font-black text-xl text-brand-cyan">R$ 1.299,00</div>
+                                </div>
+                                <span class="text-[10px] text-slate-400 uppercase">Conforto Extremo</span>
+                            </div>
+                            <button data-product="Cadeira Gamer Pro Racing" data-price="1299" class="add-to-quote-btn w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-brand-cyan text-brand-dark font-orbitron font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Adicionar ao Orçamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTERACTIVE MONTE SEU PC & FORMULARIO DE ORÇAMENTO -->
+        <section id="monte-seu-pc" class="scroll-mt-28 space-y-10">
+            <div class="text-center space-y-3">
+                <span class="text-xs text-brand-cyan font-orbitron tracking-widest uppercase">CONFIGURADOR INTERATIVO</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl font-extrabold text-white tracking-wide" id="orcamento">
+                    SOLICITE SEU <span class="text-brand-cyan">ORÇAMENTO</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-cyan to-transparent mx-auto"></div>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                    Monte a máquina ideal para o seu perfil e receba uma proposta personalizada dos nossos especialistas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Main Form Column (8 cols) -->
+                <form id="quote-form" class="lg:col-span-8 glass-panel p-6 sm:p-10 rounded-3xl space-y-8 border border-brand-cyan/20">
+                    
+                    <!-- STEP 1: CATEGORIA E HARDWARE -->
+                    <fieldset class="space-y-4">
+                        <legend class="font-orbitron text-lg font-bold text-brand-cyan flex items-center gap-2">
+                            <i class="fa-solid fa-microchip"></i> 1. Seleção de Hardware Principal
+                        </legend>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="produtos" class="block text-xs font-semibold text-slate-300 uppercase mb-2">Categoria de Produto:</label>
+                                <select name="produtos" id="produtos" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-cyan transition-colors">
+                                    <option value="computador_completo" data-base-price="4500">Computador Gamer Completo</option>
+                                    <option value="placa_de_video" data-base-price="3500">Placa de Vídeo (GPU)</option>
+                                    <option value="processador" data-base-price="1800">Processador (CPU)</option>
+                                    <option value="monitor" data-base-price="1500">Monitor High Refresh</option>
+                                    <option value="perifericos_combo" data-base-price="800">Kit Periféricos Pro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="gpu" class="block text-xs font-semibold text-slate-300 uppercase mb-2">Placa de Vídeo Desejada:</label>
+                                <select id="gpu" name="gpu" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-cyan transition-colors">
+                                    <option value="" disabled selected>Selecione uma GPU...</option>
+                                    <option value="rtx_4090" data-price="11500">NVIDIA RTX 4090 (Top 4K)</option>
+                                    <option value="rtx_4080" data-price="7800">NVIDIA RTX 4080 Super</option>
+                                    <option value="rtx_4070" data-price="4500">NVIDIA RTX 4070 Ti</option>
+                                    <option value="rtx_4060" data-price="2400">NVIDIA RTX 4060 Ti</option>
+                                    <option value="rx_7900_xtx" data-price="7200">AMD Radeon RX 7900 XTX</option>
+                                    <option value="rx_7900_xt" data-price="5400">AMD Radeon RX 7900 XT</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <hr class="border-slate-800">
+
+                    <!-- STEP 2: PERFIL DO COMPUTADOR -->
+                    <fieldset class="space-y-6">
+                        <legend class="font-orbitron text-lg font-bold text-brand-cyan flex items-center gap-2">
+                            <i class="fa-solid fa-gamepad"></i> 2. Perfil & Uso Recomendado
+                        </legend>
+
+                        <!-- Para Jogos Radio -->
+                        <div class="space-y-2">
+                            <span class="block text-xs font-semibold text-slate-300 uppercase">O foco principal é para Jogos?</span>
+                            <div class="flex items-center gap-6">
+                                <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                    <input type="radio" name="para_jogos" id="jogos_sim" value="sim" checked class="w-4 h-4">
+                                    <span>Sim, foco em alta performance</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                    <input type="radio" name="para_jogos" id="jogos_nao" value="nao" class="w-4 h-4">
+                                    <span>Não, apenas uso geral/trabalho</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Jogos Checkboxes -->
+                        <div class="space-y-2">
+                            <span class="block text-xs font-semibold text-slate-300 uppercase">Quais jogos pretende rodar no máximo?</span>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="Valorant" class="game-check">
+                                    <span>Valorant</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="CS:GO" class="game-check">
+                                    <span>CS:GO / CS2</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="LoL" class="game-check">
+                                    <span>League of Legends</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="Dota 2" class="game-check">
+                                    <span>Dota 2</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="Fortnite" class="game-check">
+                                    <span>Fortnite</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="Apex Legends" class="game-check">
+                                    <span>Apex Legends</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="Overwatch" class="game-check">
+                                    <span>Overwatch 2</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-brand-cyan/40 cursor-pointer text-xs transition-colors">
+                                    <input type="checkbox" name="jogos[]" value="Minecraft" class="game-check">
+                                    <span>Minecraft RTX</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Objetivo Principal Radio -->
+                        <div class="space-y-2">
+                            <span class="block text-xs font-semibold text-slate-300 uppercase">Objetivo Principal de Uso:</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-cyan cursor-pointer text-xs">
+                                    <input type="radio" name="objetivo" id="obj_jogos" value="jogos" data-add-price="0" checked>
+                                    <span>Jogos Eletrônicos</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-cyan cursor-pointer text-xs">
+                                    <input type="radio" name="objetivo" id="obj_streaming" value="streaming" data-add-price="600">
+                                    <span>Streaming & Live</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-cyan cursor-pointer text-xs">
+                                    <input type="radio" name="objetivo" id="obj_trabalho" value="trabalho" data-add-price="400">
+                                    <span>Edição 3D / Trabalho</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Adicionais Checkboxes -->
+                        <div class="space-y-2">
+                            <span class="block text-xs font-semibold text-slate-300 uppercase">Serviços e Adicionais Desejados:</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer text-xs hover:border-brand-cyan/40">
+                                    <input type="checkbox" name="adicionais[]" value="rgb" data-addon-price="250" class="addon-check">
+                                    <span>Iluminação ARGB Custom (+R$ 250)</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer text-xs hover:border-brand-cyan/40">
+                                    <input type="checkbox" name="adicionais[]" value="overclock" data-addon-price="350" class="addon-check">
+                                    <span>Overclock Estável (+R$ 350)</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer text-xs hover:border-brand-cyan/40">
+                                    <input type="checkbox" name="adicionais[]" value="garantia" data-addon-price="490" class="addon-check">
+                                    <span>Garantia Estendida 2 Anos (+R$ 490)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <hr class="border-slate-800">
+
+                    <!-- STEP 3: ANEXOS & DADOS DO CLIENTE -->
+                    <fieldset class="space-y-6">
+                        <legend class="font-orbitron text-lg font-bold text-brand-cyan flex items-center gap-2">
+                            <i class="fa-solid fa-user-gear"></i> 3. Observações & Dados de Contato
+                        </legend>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label for="observacoes" class="block text-xs font-semibold text-slate-300 uppercase mb-2">Observações ou Dúvidas Frequentes:</label>
+                                <textarea id="observacoes" name="observacoes" rows="3" placeholder="Digite aqui detalhes da sua necessidade, marca de preferência ou projeto..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200 focus:outline-none focus:border-brand-cyan transition-colors resize-none"></textarea>
+                            </div>
+
+                            <!-- File Upload Area -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Anexar Print ou Foto de Referência:</label>
+                                <div id="drop-zone" class="border-2 border-dashed border-slate-700 hover:border-brand-cyan rounded-2xl p-6 text-center cursor-pointer transition-colors bg-slate-900/40">
+                                    <input type="file" id="foto_referencia" name="foto_referencia" accept="image/*" class="hidden">
+                                    <div class="space-y-2" id="upload-prompt">
+                                        <i class="fa-solid fa-cloud-arrow-up text-3xl text-brand-cyan"></i>
+                                        <p class="text-xs text-slate-300">Arraste uma imagem ou <span class="text-brand-cyan font-bold underline">clique para selecionar</span></p>
+                                        <p class="text-[10px] text-slate-500">Formatos aceitos: PNG, JPG, WEBP (Max 5MB)</p>
+                                    </div>
+                                    <div id="file-preview" class="hidden flex items-center justify-center gap-4">
+                                        <img id="preview-img" src="" alt="Preview" class="h-16 w-16 object-cover rounded-lg border border-brand-cyan">
+                                        <div class="text-left">
+                                            <p id="preview-name" class="text-xs font-bold text-white truncate max-w-[200px]"></p>
+                                            <button type="button" id="remove-file-btn" class="text-[10px] text-red-400 hover:underline">Remover foto</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Fields -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                                <div>
+                                    <label for="nome" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nome Completo *</label>
+                                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-cyan">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-slate-300 uppercase mb-1">E-mail *</label>
+                                    <input type="email" name="email" id="email" placeholder="seuemail@exemplo.com" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-cyan">
+                                </div>
+                                <div>
+                                    <label for="whatsapp" class="block text-xs font-semibold text-slate-300 uppercase mb-1">WhatsApp *</label>
+                                    <input type="tel" name="whatsapp" id="whatsapp" placeholder="(19) 99999-9999" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-cyan">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button type="submit" class="flex-1 py-4 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 text-brand-dark font-orbitron font-extrabold text-sm uppercase tracking-wider neon-glow-btn flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> ENVIAR SOLICITAÇÃO DE ORÇAMENTO
+                        </button>
+                        <button type="reset" id="reset-btn" class="px-6 py-4 rounded-xl glass-panel text-slate-400 hover:text-white font-orbitron font-bold text-xs uppercase tracking-wider hover:bg-slate-800">
+                            LIMPAR FORMULÁRIO
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Sticky Summary Column (4 cols) -->
+                <div class="lg:col-span-4 sticky top-28 space-y-6">
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-brand-cyan/30 space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                            <h3 class="font-orbitron text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-calculator text-brand-cyan"></i> ESTIMATIVA REAL
+                            </h3>
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-cyan animate-ping"></span>
+                        </div>
+
+                        <!-- Selected Items List -->
+                        <div class="space-y-3 text-xs text-slate-300" id="quote-summary-list">
+                            <div class="flex justify-between py-1 border-b border-slate-800/50">
+                                <span>Base Setup:</span>
+                                <span class="font-bold text-white" id="summary-base">R$ 4.500,00</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-800/50">
+                                <span>GPU Selecionada:</span>
+                                <span class="font-bold text-brand-cyan" id="summary-gpu">Nenhuma</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-800/50">
+                                <span>Adicionais & Serviços:</span>
+                                <span class="font-bold text-slate-200" id="summary-addons">R$ 0,00</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-slate-800/50">
+                                <span>Itens do Catálogo:</span>
+                                <span class="font-bold text-slate-200" id="summary-cart-count">0 selecionados</span>
+                            </div>
+                        </div>
+
+                        <!-- Total Price Display -->
+                        <div class="pt-2">
+                            <span class="text-xs text-slate-400 uppercase tracking-wider block">Valor Estimado:</span>
+                            <div class="font-orbitron font-black text-3xl text-brand-cyan" id="live-total-price">
+                                R$ 4.500,00
+                            </div>
+                            <p class="text-[10px] text-slate-400 mt-1">*Valor sujeito a alteração conforme disponibilidade de estoque.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-blue-950/60 border border-brand-cyan/20 space-y-2">
+                            <div class="flex items-center gap-2 text-brand-cyan text-xs font-bold">
+                                <i class="fa-solid fa-truck-fast"></i> Montagem e Teste Grátis
+                            </div>
+                            <p class="text-[11px] text-slate-300">Todos os computadores saem com Cable Management profissional e testes de estabilidade por 24 horas.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTATO DIRECT LINK -->
+        <section id="contato" class="scroll-mt-28 glass-panel p-8 sm:p-12 rounded-3xl text-center space-y-6 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 text-3xl border border-emerald-500/30">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            
+            <div class="space-y-2">
+                <h3 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white">Precisa de Atendimento Imediato?</h3>
+                <p class="text-slate-300 max-w-lg mx-auto text-sm">
+                    Fale diretamente com os nossos especialistas técnicos pelo WhatsApp e tire suas dúvidas em tempo real.
+                </p>
+            </div>
+
+            <div>
+                <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-orbitron font-bold text-sm uppercase tracking-wider shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar com um Consultor no WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="mt-auto border-t border-slate-800/80 bg-brand-dark/95 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Footer Brand -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-cyan to-blue-600 flex items-center justify-center text-brand-dark font-black text-sm">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="font-orbitron font-extrabold text-lg text-white tracking-wider">
+                        PIXEL<span class="text-brand-cyan">GEAR</span>
+                    </span>
+                </a>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-4 text-slate-400 text-lg">
+                    <a href="#" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-brand-cyan hover:border-brand-cyan transition-colors"><i class="fa-brands fa-twitch"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 PixelGear eSports Store - Todos os direitos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Termos de Serviço</a>
+                    <a href="#" class="hover:underline">Política de Privacidade</a>
+                    <a href="#" class="hover:underline">Garantia & Trocas</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center text-2xl shadow-[0_0_25px_rgba(16,185,129,0.6)] transition-all transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- IMAGE LIGHTBOX MODAL -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full">
+            <button id="close-image-modal" class="absolute -top-12 right-0 text-slate-300 hover:text-brand-cyan text-3xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img-target" src="" alt="Enlarged Hardware" class="w-full max-h-[80vh] object-contain rounded-2xl border border-brand-cyan/40">
+        </div>
+    </div>
+
+    <!-- SUCCESS / BUDGET SUMMARY MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-panel max-w-lg w-full rounded-3xl p-8 border border-brand-cyan/40 space-y-6 relative animate-pulse-cyan">
+            <button id="close-success-modal" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="text-center space-y-3">
+                <div class="w-16 h-16 rounded-full bg-brand-cyan/20 border border-brand-cyan flex items-center justify-center text-brand-cyan text-3xl mx-auto">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="font-orbitron text-2xl font-black text-white">Solicitação Recebida!</h3>
+                <p class="text-slate-300 text-xs">Obrigado por escolher a PixelGear. Seu orçamento prévio foi gerado com sucesso.</p>
+            </div>
+
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-xs space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Cliente:</span>
+                    <span id="modal-client-name" class="font-bold text-white"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">WhatsApp:</span>
+                    <span id="modal-client-phone" class="font-bold text-white"></span>
+                </div>
+                <div class="flex justify-between border-t border-slate-800 pt-2">
+                    <span class="text-slate-400">Estimativa Total:</span>
+                    <span id="modal-client-total" class="font-orbitron font-extrabold text-brand-cyan text-sm"></span>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <a id="modal-whatsapp-direct" href="#" target="_blank" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-orbitron font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Enviar Resumo pelo WhatsApp
+                </a>
+                <button id="modal-done-btn" class="w-full py-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold">
+                    Fechar Janela
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- STATE MANAGEMENT ---
+            let cartItems = [];
+            let uploadedFile = null;
+
+            // DOM Elements
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const quoteCounter = document.getElementById('quote-counter');
+            const quoteForm = document.getElementById('quote-form');
+            const resetBtn = document.getElementById('reset-btn');
+
+            // Dynamic Price Elements
+            const selectCategory = document.getElementById('produtos');
+            const selectGPU = document.getElementById('gpu');
+            const radioObjectives = document.querySelectorAll('input[name="objetivo"]');
+            const addonChecks = document.querySelectorAll('.addon-check');
+            
+            const summaryBase = document.getElementById('summary-base');
+            const summaryGPU = document.getElementById('summary-gpu');
+            const summaryAddons = document.getElementById('summary-addons');
+            const summaryCartCount = document.getElementById('summary-cart-count');
+            const liveTotalPrice = document.getElementById('live-total-price');
+
+            // Upload Elements
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('foto_referencia');
+            const uploadPrompt = document.getElementById('upload-prompt');
+            const filePreview = document.getElementById('file-preview');
+            const previewImg = document.getElementById('preview-img');
+            const previewName = document.getElementById('preview-name');
+            const removeFileBtn = document.getElementById('remove-file-btn');
+
+            // Modal Elements
+            const imageModal = document.getElementById('image-modal');
+            const modalImgTarget = document.getElementById('modal-img-target');
+            const closeImageModal = document.getElementById('close-image-modal');
+
+            const successModal = document.getElementById('success-modal');
+            const closeSuccessModal = document.getElementById('close-success-modal');
+            const modalDoneBtn = document.getElementById('modal-done-btn');
+            const modalClientName = document.getElementById('modal-client-name');
+            const modalClientPhone = document.getElementById('modal-client-phone');
+            const modalClientTotal = document.getElementById('modal-client-total');
+            const modalWhatsappDirect = document.getElementById('modal-whatsapp-direct');
+
+            // --- MOBILE MENU TOGGLE ---
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- FORMAT CURRENCY ---
+            function formatBRL(amount) {
+                return amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+
+            // --- CALCULATE ESTIMATED BUDGET ---
+            function calculateTotal() {
+                // 1. Base category price
+                const selectedCatOption = selectCategory.options[selectCategory.selectedIndex];
+                const basePrice = parseFloat(selectedCatOption.getAttribute('data-base-price')) || 0;
+
+                // 2. GPU Price
+                let gpuPrice = 0;
+                let gpuText = 'Nenhuma';
+                if (selectGPU.selectedIndex > 0) {
+                    const selectedGpuOption = selectGPU.options[selectGPU.selectedIndex];
+                    gpuPrice = parseFloat(selectedGpuOption.getAttribute('data-price')) || 0;
+                    gpuText = selectedGpuOption.text.split('(')[0].trim();
+                }
+
+                // 3. Objective extra cost
+                let objExtra = 0;
+                radioObjectives.forEach(radio => {
+                    if (radio.checked) {
+                        objExtra = parseFloat(radio.getAttribute('data-add-price')) || 0;
+                    }
+                });
+
+                // 4. Addons total
+                let addonsTotal = 0;
+                addonChecks.forEach(check => {
+                    if (check.checked) {
+                        addonsTotal += parseFloat(check.getAttribute('data-addon-price')) || 0;
+                    }
+                });
+                addonsTotal += objExtra;
+
+                // 5. Catalog Added Items total
+                let cartTotal = cartItems.reduce((acc, item) => acc + item.price, 0);
+
+                // Total calculation
+                const grandTotal = basePrice + gpuPrice + addonsTotal + cartTotal;
+
+                // Update UI Summary
+                summaryBase.textContent = formatBRL(basePrice);
+                summaryGPU.textContent = gpuText !== 'Nenhuma' ? `${gpuText} (+${formatBRL(gpuPrice)})` : 'Nenhuma';
+                summaryAddons.textContent = formatBRL(addonsTotal);
+                summaryCartCount.textContent = `${cartItems.length} item(ns) (${formatBRL(cartTotal)})`;
+                liveTotalPrice.textContent = formatBRL(grandTotal);
+
+                return grandTotal;
+            }
+
+            // Listen to form inputs for real-time recalculation
+            selectCategory.addEventListener('change', calculateTotal);
+            selectGPU.addEventListener('change', calculateTotal);
+            radioObjectives.forEach(r => r.addEventListener('change', calculateTotal));
+            addonChecks.forEach(c => c.addEventListener('change', calculateTotal));
+
+            // --- ADD TO QUOTE / CART FUNCTIONALITY ---
+            document.querySelectorAll('.add-to-quote-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productName = btn.getAttribute('data-product');
+                    const productPrice = parseFloat(btn.getAttribute('data-price'));
+
+                    cartItems.push({ name: productName, price: productPrice });
+                    quoteCounter.textContent = cartItems.length;
+
+                    showToast(`"${productName}" adicionado ao seu orçamento!`);
+                    calculateTotal();
+                });
+            });
+
+            // --- TOAST NOTIFICATIONS SYSTEM ---
+            function showToast(message) {
+                const toastContainer = document.getElementById('toast-container');
+                const toast = document.createElement('div');
+                toast.className = 'glass-panel border-brand-cyan/50 text-white px-4 py-3 rounded-xl text-xs font-semibold shadow-lg flex items-center gap-3 animate-pulse-cyan pointer-events-auto transition-all duration-300 transform translate-x-10 opacity-0';
+                toast.innerHTML = `
+                    <i class="fa-solid fa-circle-check text-brand-cyan text-base"></i>
+                    <span>${message}</span>
+                `;
+
+                toastContainer.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.classList.remove('translate-x-10', 'opacity-0');
+                }, 50);
+
+                setTimeout(() => {
+                    toast.classList.add('translate-x-10', 'opacity-0');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // --- CATALOG FILTER TABS ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active-filter', 'bg-brand-cyan', 'text-brand-dark');
+                        b.classList.add('glass-panel', 'text-slate-300');
+                    });
+
+                    btn.classList.add('active-filter', 'bg-brand-cyan', 'text-brand-dark');
+                    btn.classList.remove('glass-panel', 'text-slate-300');
+
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // --- FILE UPLOAD DROPZONE PREVIEW ---
+            dropZone.addEventListener('click', () => fileInput.click());
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('border-brand-cyan', 'bg-slate-800/60');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('border-brand-cyan', 'bg-slate-800/60');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('border-brand-cyan', 'bg-slate-800/60');
+                if (e.dataTransfer.files.length > 0) {
+                    handleFile(e.dataTransfer.files[0]);
+                }
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFile(e.target.files[0]);
+                }
+            });
+
+            function handleFile(file) {
+                if (!file.type.startsWith('image/')) {
+                    showToast('Por favor, anexe um arquivo de imagem válido.');
+                    return;
+                }
+                uploadedFile = file;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImg.src = e.target.result;
+                    previewName.textContent = file.name;
+                    uploadPrompt.classList.add('hidden');
+                    filePreview.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+
+            removeFileBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                uploadedFile = null;
+                fileInput.value = '';
+                uploadPrompt.classList.remove('hidden');
+                filePreview.classList.add('hidden');
+            });
+
+            // --- IMAGE MODAL LIGHTBOX ---
+            document.querySelectorAll('.img-modal-trigger').forEach(img => {
+                img.addEventListener('click', () => {
+                    modalImgTarget.src = img.src;
+                    imageModal.classList.remove('hidden');
+                });
+            });
+
+            closeImageModal.addEventListener('click', () => {
+                imageModal.classList.add('hidden');
+            });
+
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) imageModal.classList.add('hidden');
+            });
+
+            // --- FORM SUBMISSION & WHATSAPP MODAL INTEGRATION ---
+            quoteForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const whatsapp = document.getElementById('whatsapp').value;
+
+                if (!nome || !email || !whatsapp) {
+                    showToast('Por favor, preencha todos os campos obrigatórios!');
+                    return;
+                }
+
+                const totalEstimado = calculateTotal();
+
+                // Populate Modal
+                modalClientName.textContent = nome;
+                modalClientPhone.textContent = whatsapp;
+                modalClientTotal.textContent = formatBRL(totalEstimado);
+
+                // Build WhatsApp message text
+                const gpuText = selectGPU.options[selectGPU.selectedIndex]?.text || 'Nenhuma';
+                let msg = `Olá PixelGear! Gostaria de um orçamento:\n`;
+                msg += `👤 *Nome:* ${nome}\n`;
+                msg += `📱 *WhatsApp:* ${whatsapp}\n`;
+                msg += `💻 *GPU:* ${gpuText}\n`;
+                msg += `💰 *Valor Estimado:* ${formatBRL(totalEstimado)}\n`;
+                if (cartItems.length > 0) {
+                    msg += `📦 *Itens Adicionados:* ${cartItems.map(i => i.name).join(', ')}`;
+                }
+
+                modalWhatsappDirect.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+
+                successModal.classList.remove('hidden');
+            });
+
+            closeSuccessModal.addEventListener('click', () => successModal.classList.add('hidden'));
+            modalDoneBtn.addEventListener('click', () => successModal.classList.add('hidden'));
+
+            resetBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                    cartItems = [];
+                    quoteCounter.textContent = '0';
+                    uploadedFile = null;
+                    uploadPrompt.classList.remove('hidden');
+                    filePreview.classList.add('hidden');
+                    calculateTotal();
+                    showToast('Formulário redefinido com sucesso!');
+                }, 50);
+            });
+
+            // Initialize Calculation
+            calculateTotal();
+        });
+    </script>
+</body>
+</html>
