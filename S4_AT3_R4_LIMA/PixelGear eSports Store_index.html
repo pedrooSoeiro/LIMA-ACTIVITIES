@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!-- Define o tipo do documento como HTML5 para o navegador saber como renderizar a página -->
+<html lang="pt-br">
+
+<head>
+    <!-- Define a codificação de caracteres para UTF-8, garantindo suporte a acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para tornar o site responsivo em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descrição da página utilizada por motores de busca (SEO) -->
+    <meta name="description" content="Página web de uma loja de artigos esportivos">
+    <!-- Garante compatibilidade de renderização com versões mais antigas do Internet Explorer / Edge -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Título que aparece na aba do navegador -->
+    <title>Esportes Shop Sumaré</title>
+
+    <!-- Folha de estilos externa para organizar o visual da página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- <header>: Cabeçalho principal da página -->
+    <header>
+        <h1>Esportes <em>Shop</em> Sumare</h1>
+        <p>Sua loja especializada em <b>artigos esportivos</b> do basico ao profissional.</p>
+    </header>
+
+    <!-- <hr>: Linha horizontal usada para separar seções do conteúdo -->
+    <hr>
+
+    <!-- <main>: Envolve o conteúdo principal e exclusivo da página -->
+    <main>
+        <!-- <section>: Agrupa conteúdos relacionados sob um mesmo tema (Institucional) -->
+        <section id="institucional">
+            <h2>Sobre a Esportes Shop Sumaré</h2>
+
+            <!-- <article>: Representa um bloco de conteúdo independente e autoexplicativo -->
+            <article>
+                <h3>Nossa Missão</h3>
+                <p>Fornecer equipamentos de alta tecnologia para <strong>elevar o nível dos atletas</strong> revelando
+                    seu real potencial.</p>
+            </article>
+
+            <article>
+                <h3>Nossos Valores</h3>
+                <p><strong>Qualidade extrema</strong> em todo processo de produção,<br>garantia de <strong>1
+                        ano</strong>,<br>transparência e paixão pelo universo dos <em>esportes</em>.</p>
+            </article>
+
+            <article>
+                <h3><strong>Nossos Produtos</strong></h3>
+                <!-- <ul>: Lista não ordenada -->
+                <ul>
+                    <li>Chuteiras de todas as modalidades</li>
+                    <li>Camisas e calções esportivos</li>
+                    <li>Calçados esportivos em geral</li>
+                    <li>Acessórios para prática de esportes</li>
+                    <li>Equipamentos para praticar seu esporte</li>
+                </ul>
+            </article>
+
+            <!-- <article> agrupa as listas que organizam os produtos em categorias -->
+            <article>
+                <h3><strong>Categorias de produtos</strong></h3>
+
+                <!-- Lista não numerada: mostra as principais categorias da loja. -->
+                <ul>
+                    <li>Futebol
+                        <!-- Lista numerada dentro de uma categoria: lista encadeada. -->
+                        <ol>
+                            <li>Chuteiras</li>
+                            <li>Bolas</li>
+                            <li>Luvas de goleiro</li>
+                        </ol>
+                    </li>
+                    <li>Vestuário
+                        <ol>
+                            <li>Camisas</li>
+                            <li>Calções</li>
+                            <li>Meiões</li>
+                        </ol>
+                    </li>
+                    <li>Acessórios
+                        <ol>
+                            <li>Mochilas</li>
+                            <li>Garrafas</li>
+                            <li>Bonés</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <!-- Lista de definição: explica termos usados no catálogo. -->
+                <dl>
+                    <dt>Produto disponível</dt>
+                    <dd>Produto que pode ser comprado imediatamente.</dd>
+
+                    <dt>Produto em breve</dt>
+                    <dd>Produto anunciado, mas ainda sem estoque para venda.</dd>
+                </dl>
+            </article>
+
+            <h3 class="destaque-azul"><strong>Novidades prestes a chegar!</strong></h3>
+
+            <!-- A tabela usa atributos simples de largura, espaçamento e alinhamento. -->
+            <div class="tabela-responsiva">
+                <table width="100%" height="220" cellpadding="8" cellspacing="0" align="center">
+                    <!-- <caption> informa o assunto da tabela para usuários e tecnologias assistivas. -->
+                    <caption>Produtos esportivos, preços e disponibilidade</caption>
+
+                    <!-- Cabeçalho da tabela -->
+                    <thead>
+                        <tr>
+                            <th scope="col" width="25%" align="left" valign="middle">Produto</th>
+                            <th scope="col" width="35%" align="left" valign="middle">Descrição</th>
+                            <th scope="col" width="15%" align="center" valign="middle">Preço</th>
+                            <th scope="col" width="15%" align="center" valign="middle">Marca</th>
+                            <th scope="col" width="10%" align="center" valign="middle">Disponibilidade</th>
+                        </tr>
+                    </thead>
+
+                    <!-- Corpo da tabela: cada linha representa um produto. -->
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" align="left" valign="middle"><strong>Calçados esportivos</strong></td>
+                            <td>Chuteira Nike Mercurial com conforto e controle no campo.</td>
+                            <td class="preco-destaque" align="center">R$ 899,90</td>
+                            <td align="center">Nike</td>
+                            <td align="center">Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>Chuteira Nike Phantom para jogadores de diferentes níveis.</td>
+                            <td class="preco-destaque" align="center">R$ 1.199,90</td>
+                            <td align="center">Nike</td>
+                            <td align="center">Em breve</td>
+                        </tr>
+                        <tr>
+                            <td>Camisa Corinthians 25/26</td>
+                            <td>Camisa oficial feita com tecido respirável.</td>
+                            <td class="preco-destaque" align="center">R$ 499,90</td>
+                            <td align="center">Corinthians</td>
+                            <td align="center">Em estoque</td>
+                        </tr>
+                        <tr>
+                            <td>Bola da Copa do Mundo 2026</td>
+                            <td>Bola oficial fabricada com materiais de alta qualidade.</td>
+                            <td class="preco-destaque" align="center">R$ 1.199,00</td>
+                            <td align="center">Adidas</td>
+                            <td align="center">Em breve</td>
+                        </tr>
+                        <tr>
+                            <td>Camisa Palmeiras 25/26</td>
+                            <td>Camisa oficial feita com tecido respirável e confortável.</td>
+                            <td class="preco-destaque" align="center">R$ 499,90</td>
+                            <td align="center">Palmeiras</td>
+                            <td align="center">Em estoque</td>
+                        </tr>
+                    </tbody>
+
+                    <!-- Rodapé da tabela: resumo do conteúdo. -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" align="center"><strong>Catálogo atualizado em novembro de 2026</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Segunda tabela simples para organizar categorias e subcategorias. -->
+            <h3 class="destaque-azul"><strong>Resumo das categorias</strong></h3>
+            <div class="tabela-responsiva">
+                <table cellpadding="8" cellspacing="0" align="center">
+                    <caption>Relacionamento entre categorias e subcategorias</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Subcategoria</th>
+                            <th scope="col">Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" align="center" valign="middle"><strong>Futebol</strong></td>
+                            <td>Calçados</td>
+                            <td>Chuteira Nike</td>
+                        </tr>
+                        <tr>
+                            <td>Bolas</td>
+                            <td>Bola Adidas</td>
+                        </tr>
+                        <tr>
+                            <td>Proteção</td>
+                            <td>Luva de goleiro</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><strong>Vestuário esportivo</strong></td>
+                            <td>Camisas e calções</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- <form>: Formulário interativo -->
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- <fieldset>: Agrupa visual e semanticamente campos relacionados -->
+            <fieldset>
+                <legend>Escolha o produto desejado</legend>
+                <p>
+                    <label for="produtos">Produto:</label>
+                    <select name="produtos" id="produtos">
+                        <option value="chuteira">Chuteira</option>
+                        <option value="camisa">Camisa Esportiva</option>
+                        <option value="shorts">Calção Esportivo</option>
+                        <option value="bola">Bola</option>
+                        <option value="tenis">Tênis Esportivo</option>
+                        <option value="roupa">Roupa Esportiva</option>
+                        <option value="acessorio">Acessório</option>
+                        <option value="equipamento">Equipamento de Futebol</option>
+                        <option value="luva">Luva de Goleiro</option>
+                        <option value="mochila">Mochila Esportiva</option>
+                        <option value="bone">Boné</option>
+                        <option value="meiao">Meião</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Marcas esportivas disponíveis</legend>
+                <p>
+                    <label for="marca">Escolha uma marca:</label>
+                    <select id="marca" name="marca" required>
+                        <option value="" disabled selected>Selecione uma opção...</option>
+                        <option value="nike">Nike</option>
+                        <option value="adidas">Adidas</option>
+                        <option value="puma">Puma</option>
+                        <option value="mizuno">Mizuno</option>
+                        <option value="umbro">Umbro</option>
+                        <option value="penalty">Penalty</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Perfil do Atleta</legend>
+                <p>
+                    <strong>O produto é para prática esportiva frequente?</strong><br>
+                    <input type="radio" name="uso_frequente" id="uso_sim" value="sim">
+                    <label for="uso_sim">Sim</label>
+                    <input type="radio" name="uso_frequente" id="uso_nao" value="nao">
+                    <label for="uso_nao">Não</label>
+                </p>
+
+                <p>
+                    <strong>Quais modalidades praticadas?</strong><br>
+                    <input type="checkbox" name="modalidades[]" id="futebol" value="Futebol">
+                    <label for="futebol">Futebol</label><br>
+                    <input type="checkbox" name="modalidades[]" id="volei" value="Vôlei">
+                    <label for="volei">Vôlei</label><br>
+                    <input type="checkbox" name="modalidades[]" id="basquete" value="Basquete">
+                    <label for="basquete">Basquete</label><br>
+                    <input type="checkbox" name="modalidades[]" id="corrida" value="Corrida">
+                    <label for="corrida">Corrida</label><br>
+                    <input type="checkbox" name="modalidades[]" id="natacao" value="Natação">
+                    <label for="natacao">Natação</label><br>
+                    <input type="checkbox" name="modalidades[]" id="academia" value="Academia">
+                    <label for="academia">Academia</label><br>
+                    <input type="checkbox" name="modalidades[]" id="handebol" value="Handebol">
+                    <label for="handebol">Handebol</label><br>
+                    <input type="checkbox" name="modalidades[]" id="futsal" value="Futsal">
+                    <label for="futsal">Futsal</label>
+                </p>
+
+                <p>
+                    <strong>Objetivo Principal:</strong><br>
+                    <input type="radio" name="objetivo" id="obj_lazer" value="lazer">
+                    <label for="obj_lazer">Prática recreativa</label>
+
+                    <input type="radio" name="objetivo" id="obj_competicao" value="competicao">
+                    <label for="obj_competicao">Competição</label>
+
+                    <input type="radio" name="objetivo" id="obj_treino" value="treino">
+                    <label for="obj_treino">Treino</label>
+                </p>
+
+                <p>
+                    <strong>Serviços e Adicionais Desejados:</strong><br>
+                    <input type="checkbox" name="adicionais[]" id="personalizacao" value="personalizacao">
+                    <label for="personalizacao">Personalização</label>
+
+                    <input type="checkbox" name="adicionais[]" id="entrega" value="entrega">
+                    <label for="entrega">Entrega em domicílio</label>
+
+                    <input type="checkbox" name="adicionais[]" id="garantia" value="garantia">
+                    <label for="garantia">Garantia Estendida</label>
+                </p>
+            </fieldset>
+
+            <br>
+            <section>
+                <h2>Catálogo de Produtos em Destaque</h2>
+                <br>
+                <fieldset>
+                    <article>
+                        <h3>1. Chuteira Nike Phantom GT2</h3>
+                        <img src="https://imgcentauro-a.akamaihd.net/1500x1500/9976AZW6A3.jpg"
+                            alt="Chuteira Nike Phantom GT2" width="250">
+                        <h4>Categoria: Chuteiras</h4>
+                        <p>
+                            Preço: <strong class="preco-destaque">R$ 1.199,90</strong> à vista!<br>
+                            Chuteira de futebol Nike Phantom GT2, desenvolvida para jogadores que buscam precisão e
+                            controle
+                            em campo seco.
+                        </p>
+                        <ol>
+                            <li>Material: Couro sintético de alta qualidade</li>
+                            <li>Solado: FG para gramados firmes</li>
+                            <li>Cor: Preto com detalhes em amarelo</li>
+                        </ol>
+                    </article>
+                </fieldset>
+
+                <br>
+                <fieldset>
+                    <article>
+                        <h3>2. Bola de Futebol Adidas Brazuca</h3>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXq16nNrzP-PLGV5KRtArh8k-dZOQ7mGtJ8pNTbGNCfA&s=10"
+                            alt="Bola de Futebol Adidas Brazuca" width="250">
+                        <h4>Categoria: Bolas de Futebol</h4>
+                        <p>
+                            Preço: <strong>R$ 299,90</strong> em até <b>5x sem juros</b><br>
+                            A bola de futebol oficial da Copa do Mundo de 2014, com tecnologia de ponta para melhor
+                            desempenho em campo.
+                        </p>
+                        <ol>
+                            <li>Material: TPU com câmara de ar butílica</li>
+                            <li>Tamanhos disponíveis: 4 e 5</li>
+                            <li>Cor: Branco com detalhes em azul e verde</li>
+                        </ol>
+                    </article>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <article>
+                        <h3>3. Camisa de Time Corinthians 2023</h3>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkMUdx0Pp3tAyCRO3bMU1NVaEbLMRLQwQwaUVyjAGvieW9Lvb87fJsnlc&s=10"
+                            alt="Camisa de Time Corinthians 2023" width="250">
+                        <h4>Categoria: Roupas e Acessórios</h4>
+                        <p>
+                            Preço: <strong>R$ 199,90</strong><br>
+                            Camisa oficial do Corinthians, modelo 2023, fabricada em tecido respirável e com tecnologia
+                            que proporciona conforto durante o uso.
+                        </p>
+                        <ol>
+                            <li>Material: 100% poliéster</li>
+                            <li>Tamanhos disponíveis: P, M, G e GG</li>
+                            <li>Cor: Preto com detalhes em branco</li>
+                        </ol>
+                    </article>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <article>
+                        <h3>4. Meião de Futebol Nike Classic</h3>
+                        <img src="https://imgnike-a.akamaihd.net/768x768/097799CZA1.jpg"
+                            alt="Meião de Futebol Nike Classic" width="250">
+                        <h4>Categoria: Acessórios para Futebol</h4>
+                        <p>
+                            Preço: <strong>R$ 49,90</strong><br>
+                            Meião Nike Classic II, ideal para proteção e conforto durante as partidas de futebol.
+                        </p>
+                        <ol>
+                            <li>Material: Poliéster e elastano</li>
+                            <li>Tamanhos disponíveis: Único</li>
+                            <li>Cor: Branco com detalhes em preto</li>
+                        </ol>
+                    </article>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <article>
+                        <h3>5. Luva de Goleiro Adidas Predator Pro</h3>
+                        <img src="https://assets.adidas.com/images/w_500,f_auto,q_auto/fc318ffe8bfb48fb9b90926ef3b075f9_9366/LUVAS_DE_GOLEIRO_PREDATOR_PRO_Azul_JY6296.jpg"
+                            alt="Luva de Goleiro Adidas Predator Pro" width="250">
+                        <h4>Categoria: Acessórios para Goleiros</h4>
+                        <p>
+                            Preço: <strong>R$ 349,90</strong><br>
+                            Luva de goleiro Adidas Predator Pro, com tecnologia que proporciona melhor aderência e
+                            proteção.
+                        </p>
+                        <ol>
+                            <li>Material: Látex e poliéster</li>
+                            <li>Tamanhos disponíveis: 7, 8, 9 e 10</li>
+                            <li>Cor: Preto com detalhes em vermelho</li>
+                        </ol>
+                    </article>
+                </fieldset>
+                <br>
+
+                <fieldset>
+                    <article>
+                        <h3>6. Mochila Esportiva Sumaré Team</h3>
+                        <img src="data:image/webp;base64,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"
+                            alt="Mochila Esportiva Sumaré Team" width="250">
+                        <h4>Categoria: Mochilas Esportivas</h4>
+                        <p>
+                            Preço: <strong>R$ 199,90</strong><br>
+                            Mochila esportiva resistente, com compartimentos ventilados para roupas, calçados e garrafa.
+                        </p>
+                        <ol>
+                            <li>Material: Nylon reforçado e leve</li>
+                            <li>Capacidade: 28 litros</li>
+                            <li>Cor: Preto com detalhes em azul</li>
+                        </ol>
+                    </article>
+                </fieldset>
+            </section>
+            <br>
+
+            <fieldset>
+                <legend>Observações e Anexos</legend>
+                <p>
+                    <label for="observacoes">Observações ou Dúvidas Frequentes:</label><br>
+                    <textarea id="observacoes" name="observacoes" rows="4" cols="50"
+                        placeholder="Digite aqui suas observações ou dúvidas sobre nossa loja:"></textarea>
+                </p>
+
+                <p>
+                    <label for="foto_referencia">Anexar prints ou foto de referência:</label><br>
+                    <input type="file" id="foto_referencia" name="foto_referencia" accept="image/*">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados do Cliente</legend>
+                <p>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome aqui" required>
+                </p>
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail aqui" required>
+                </p>
+                <p>
+                    <label for="whatsapp">WhatsApp:</label>
+                    <input type="tel" name="whatsapp" id="whatsapp" placeholder="(19) 99999-9999" required>
+                </p>
+            </fieldset>
+
+            <p>
+                <button type="submit">ENVIAR SOLICITAÇÃO DE ORÇAMENTO</button>
+                <button type="reset">LIMPAR FORMULÁRIO</button>
+            </p>
+        </form>
+
+        <section>
+            <h4>Entre em contato pelo WhatsApp</h4>
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">Clique aqui para entrar em
+                contato</a>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- <footer>: Rodapé da página -->
+    <footer>
+        <p>&copy; 2026 Esportes Shop Sumaré - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
