@@ -223,7 +223,14 @@
         .filter-chip { border: 1px solid var(--line); background: #fff; color: #777a82; border-radius: 999px; padding: 9px 15px; cursor: pointer; white-space: nowrap; font-size: 13px; font-weight: 700; }
         .filter-chip.active { border-color: var(--ink); background: var(--ink); color: #fff; }
         .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .product-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+        .product-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s;
+            cursor: pointer;
+        }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 18px 45px rgba(16,17,20,.08); }
         .product-image { height: 230px; background: #eceef1; position: relative; display: grid; place-items: center; overflow: hidden; }
         .product-image img { width: 78%; height: 78%; object-fit: contain; transition: transform .35s; }
@@ -235,7 +242,20 @@
         .product-bottom { display: flex; align-items: center; justify-content: space-between; }
         .product-price strong { font-size: 18px; }
         .product-price span { display: block; color: var(--muted); font-size: 11px; }
-        .add-button { width: 42px; height: 42px; border: 0; border-radius: 50%; background: var(--lime); cursor: pointer; display: grid; place-items: center; font-size: 21px; transition: transform .2s; }
+        .add-button {
+            width: 42px;
+            height: 42px;
+            border: 0;
+            border-radius: 50%;
+            background: var(--lime);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            font-size: 21px;
+            transition: transform .2s;
+            position: relative;
+            z-index: 2;
+        }
         .add-button:hover { transform: rotate(90deg) scale(1.06); }
 
         .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: #17181d; color: #fff; border-radius: var(--radius); overflow: hidden; }
@@ -335,6 +355,11 @@
         .cart-checkout { width: 100%; background: var(--lime); color: var(--ink); }
         .cart-checkout:disabled { background: #e8e9ec; color: #aaaeb5; cursor: not-allowed; transform: none; box-shadow: none; }
         .cart-continue { width: 100%; min-height: 42px; margin-top: 8px; border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; font-weight: 800; }
+        .coupon-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-bottom: 14px; }
+        .coupon-row input { min-width: 0; height: 42px; border: 1px solid var(--line); border-radius: 10px; padding: 0 12px; outline: none; text-transform: uppercase; }
+        .coupon-row input:focus { border-color: #b0cf73; }
+        .coupon-row button { height: 42px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 14px; cursor: pointer; font-size: 12px; font-weight: 800; }
+        .discount-row { color: #668d1d !important; }
 
         * {
             scrollbar-width: thin;
@@ -386,6 +411,65 @@
             .choice-row { grid-template-columns: 1fr; }
             .footer-main { align-items: flex-start; flex-direction: column; gap: 24px; }
             .footer-links { flex-wrap: wrap; }
+        }
+
+        .product-card { cursor: pointer; }
+        .add-button { position: relative; z-index: 2; }
+
+        .product-detail-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 700;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: rgba(16,17,20,.56);
+            backdrop-filter: blur(9px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .35s, visibility .35s;
+        }
+        .product-detail-overlay.open { opacity: 1; visibility: visible; }
+        .product-detail-modal {
+            width: min(980px, 100%);
+            max-height: calc(100vh - 48px);
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 30px 90px rgba(16,17,20,.28);
+            transform: translateY(18px) scale(.985);
+            transition: transform .35s;
+        }
+        .product-detail-overlay.open .product-detail-modal { transform: translateY(0) scale(1); }
+        .detail-header { height: 68px; padding: 0 20px 0 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+        .detail-breadcrumb { color: var(--muted); font-size: 12px; font-weight: 700; }
+        .detail-close { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: #fff; cursor: pointer; font-size: 20px; }
+        .detail-layout { display: grid; grid-template-columns: 1fr 1fr; }
+        .detail-gallery { min-height: 520px; background: #eff1f3; display: grid; place-items: center; border-radius: 0 0 0 24px; overflow: hidden; }
+        .detail-gallery img { width: 82%; height: 82%; object-fit: contain; }
+        .detail-content { padding: 38px 38px 32px; }
+        .detail-category { color: var(--purple); font-size: 11px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+        .detail-content h2 { margin: 9px 0 12px; font-size: 34px; line-height: 1.08; letter-spacing: -2px; }
+        .detail-description { margin: 0 0 20px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+        .detail-price { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
+        .detail-price strong { font-size: 30px; letter-spacing: -1px; }
+        .detail-price span { color: var(--muted); font-size: 12px; }
+        .detail-specs { margin: 0 0 22px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+        .detail-specs li { display: flex; justify-content: space-between; gap: 20px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+        .detail-specs span:first-child { color: var(--muted); }
+        .detail-specs strong { text-align: right; }
+        .detail-actions { display: grid; grid-template-columns: 1fr 52px; gap: 9px; }
+        .detail-add { background: var(--lime); color: var(--ink); }
+        .detail-wishlist { width: 52px; height: 50px; border: 1px solid var(--line); border-radius: 12px; background: #fff; cursor: pointer; font-size: 20px; }
+
+        @media (max-width: 760px) {
+            .product-detail-overlay { padding: 0; align-items: end; }
+            .product-detail-modal { width: 100%; max-height: 92vh; border-radius: 24px 24px 0 0; }
+            .detail-layout { grid-template-columns: 1fr; }
+            .detail-gallery { min-height: 300px; border-radius: 0; }
+            .detail-gallery img { width: 72%; height: 72%; }
+            .detail-content { padding: 26px 20px 24px; }
+            .detail-content h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -606,11 +690,44 @@
                 </div>
                 <div class="cart-summary">
                     <div class="summary-row"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+                    <div class="summary-row discount-row" id="discountRow" style="display:none"><span>Desconto</span><strong id="cartDiscount">- R$ 0,00</strong></div>
                     <div class="summary-row"><span>Frete</span><strong id="cartShipping">A calcular</strong></div>
                     <div class="summary-row total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
                 </div>
+                <div class="coupon-row">
+                    <input id="couponInput" type="text" placeholder="Cupom de desconto" aria-label="Cupom de desconto">
+                    <button id="couponButton" type="button">Aplicar</button>
+                </div>
                 <button class="primary-button cart-checkout" id="checkoutButton" disabled>Fechar pedido</button>
                 <button class="secondary-button cart-continue" id="continueShopping">Continuar comprando</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-detail-overlay" id="productDetailOverlay" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+        <div class="product-detail-modal">
+            <div class="detail-header">
+                <span class="detail-breadcrumb">PixelGear / Detalhes do produto</span>
+                <button class="detail-close" id="detailClose" type="button" aria-label="Fechar detalhes">×</button>
+            </div>
+            <div class="detail-layout">
+                <div class="detail-gallery">
+                    <img id="detailImage" src="" alt="">
+                </div>
+                <div class="detail-content">
+                    <span class="detail-category" id="detailCategory"></span>
+                    <h2 id="detailTitle"></h2>
+                    <p class="detail-description" id="detailDescription"></p>
+                    <div class="detail-price">
+                        <strong id="detailPrice"></strong>
+                        <span id="detailInstallments"></span>
+                    </div>
+                    <ul class="detail-specs" id="detailSpecs"></ul>
+                    <div class="detail-actions">
+                        <button class="primary-button detail-add" id="detailAddButton" type="button">Adicionar ao carrinho</button>
+                        <button class="detail-wishlist" id="detailWishlist" type="button" aria-label="Adicionar aos favoritos">♡</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -642,24 +759,6 @@
             });
         });
 
-        const cartCount = document.getElementById('cartCount');
-        const toast = document.getElementById('toast');
-        let cartItems = 0;
-        function showToast(message) {
-            toast.textContent = message;
-            toast.classList.add('show');
-            window.setTimeout(() => toast.classList.remove('show'), 2800);
-        }
-        document.querySelectorAll('.add-button').forEach(button => {
-            button.addEventListener('click', () => {
-                cartItems++;
-                cartCount.textContent = cartItems;
-                document.getElementById('produto').value = button.dataset.product.includes('PC') ? 'PC Gamer completo' : button.dataset.product.includes('Monitor') ? 'Monitor' : 'Periféricos';
-                showToast(`${button.dataset.product} adicionado ao orçamento`);
-                document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
         document.getElementById('quoteForm').addEventListener('submit', (event) => {
             event.preventDefault();
             showToast('Solicitação enviada! Nossa equipe entrará em contato.');
@@ -670,6 +769,9 @@
             document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
         });
 
+        const cartCount = document.getElementById('cartCount');
+        const cartButton = document.getElementById('cartButton');
+        const toast = document.getElementById('toast');
         const cartOverlay = document.getElementById('cartOverlay');
         const cartBody = document.getElementById('cartBody');
         const cartEmpty = document.getElementById('cartEmpty');
@@ -678,81 +780,239 @@
         const closeCart = document.getElementById('closeCart');
         const continueShopping = document.getElementById('continueShopping');
 
-        let cart = [];
+        let cart = JSON.parse(localStorage.getItem('pixelGearCart') || '[]');
+        let couponApplied = false;
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            window.clearTimeout(window.pixelGearToastTimer);
+            window.pixelGearToastTimer = window.setTimeout(() => toast.classList.remove('show'), 2800);
+        }
+
+        function money(value) {
+            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function openCart() {
+            cartOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideCart() {
+            cartOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
 
         function updateCart() {
-            cartBody.innerHTML = '';
-            if (cart.length === 0) {
+            const uniqueCount = cart.length;
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = itemCount;
+            document.getElementById('cartHeaderCount').textContent = `${itemCount} ${itemCount === 1 ? 'item' : 'itens'}`;
+
+            if (uniqueCount === 0) {
+                cartBody.innerHTML = '';
+                cartBody.appendChild(cartEmpty);
                 cartEmpty.style.display = 'grid';
                 cartFooter.style.display = 'none';
-            } else {
-                cartEmpty.style.display = 'none';
-                cartFooter.style.display = 'flex';
-                cart.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'cart-item';
-                    card.innerHTML = `
-                        <div class="cart-item-image">
-                            <img src="${item.image}" alt="${item.name}">
-                        </div>
-                        <div class="cart-item-info">
-                            <h3>${item.name}</h3>
-                            <div class="cart-item-price">R$ ${item.price.toFixed(2)}</div>
-                        </div>
-                        <button class="cart-remove" aria-label="Remover do carrinho">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-                        </button>
-                    `;
-                    cartBody.appendChild(card);
-                });
+                localStorage.removeItem('pixelGearCart');
+                return;
             }
-            checkoutButton.disabled = cart.length === 0;
-            document.getElementById('cartHeaderCount').textContent = `${cart.length} itens`;
+
+            cartEmpty.style.display = 'none';
+            cartFooter.style.display = 'block';
+            cartBody.innerHTML = cart.map(item => `
+                <div class="cart-item" data-name="${item.name}">
+                    <div class="cart-item-image">
+                        ${item.image ? `<img src="${item.image}" alt="${item.name}">` : '<span class="cart-fallback">🎮</span>'}
+                    </div>
+                    <div class="cart-item-info">
+                        <h3>${item.name}</h3>
+                        <div class="cart-item-price">${money(item.price)}</div>
+                        <div class="quantity-control" aria-label="Quantidade de ${item.name}">
+                            <button type="button" data-action="decrease" aria-label="Diminuir quantidade">−</button>
+                            <span>${item.quantity}</span>
+                            <button type="button" data-action="increase" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-remove" type="button" data-action="remove" aria-label="Remover ${item.name}" title="Remover">×</button>
+                </div>
+            `).join('');
+
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const discount = couponApplied ? subtotal * 0.10 : 0;
+            const discountedSubtotal = subtotal - discount;
+            const shipping = discountedSubtotal >= 500 || discountedSubtotal === 0 ? 0 : 29.90;
+            const total = discountedSubtotal + shipping;
+
+            document.getElementById('cartSubtotal').textContent = money(subtotal);
+            document.getElementById('cartDiscount').textContent = `- ${money(discount)}`;
+            document.getElementById('discountRow').style.display = couponApplied ? 'flex' : 'none';
+            document.getElementById('cartShipping').textContent = shipping === 0 ? 'Grátis' : money(shipping);
+            document.getElementById('cartTotal').textContent = money(total);
+
+            const progress = Math.min((discountedSubtotal / 500) * 100, 100);
+            document.getElementById('shippingProgress').style.width = `${progress}%`;
+            document.getElementById('shippingMessage').innerHTML = progress >= 100
+                ? '<strong>Você ganhou frete grátis!</strong>'
+                : `Adicione <strong>${money(500 - discountedSubtotal)}</strong> para ganhar frete grátis`;
+
+            checkoutButton.disabled = false;
+            localStorage.setItem('pixelGearCart', JSON.stringify(cart));
         }
 
         document.querySelectorAll('.add-button').forEach(button => {
             button.addEventListener('click', () => {
+                const productCard = button.closest('.product-card');
                 const productName = button.dataset.product;
-                const productImage = button.closest('.product-card').querySelector('img').src;
-                const productPrice = parseFloat(button.closest('.product-card').querySelector('.product-price strong').innerText.replace('R$ ', '').replace('.', '').replace(',', '.'));
+                const productImage = productCard.querySelector('img')?.src || '';
+                const priceText = productCard.querySelector('.product-price strong')?.textContent || 'R$ 0';
+                const productPrice = Number(priceText.replace(/[^0-9,]/g, '').replace(',', '.'));
 
                 const existingItem = cart.find(item => item.name === productName);
-                if (existingItem) {
-                    existingItem.quantity++;
-                } else {
-                    cart.push({ name: productName, image: productImage, price: productPrice, quantity: 1 });
-                }
+                if (existingItem) existingItem.quantity++;
+                else cart.push({ name: productName, image: productImage, price: productPrice, quantity: 1 });
 
-                cartCount.textContent = cart.length;
+                document.getElementById('produto').value = productName.toLowerCase().includes('pc')
+                    ? 'PC Gamer completo'
+                    : productName.toLowerCase().includes('monitor')
+                        ? 'Monitor'
+                        : 'Periféricos';
+
                 showToast(`${productName} adicionado ao carrinho`);
                 updateCart();
+                openCart();
             });
         });
 
-        closeCart.addEventListener('click', () => {
-            cartOverlay.classList.remove('open');
+        cartBody.addEventListener('click', event => {
+            const actionButton = event.target.closest('[data-action]');
+            if (!actionButton) return;
+            const itemElement = actionButton.closest('.cart-item');
+            const item = cart.find(product => product.name === itemElement.dataset.name);
+            if (!item) return;
+
+            if (actionButton.dataset.action === 'increase') item.quantity++;
+            if (actionButton.dataset.action === 'decrease') {
+                item.quantity--;
+                if (item.quantity <= 0) cart = cart.filter(product => product.name !== item.name);
+            }
+            if (actionButton.dataset.action === 'remove') {
+                cart = cart.filter(product => product.name !== item.name);
+                showToast(`${item.name} removido do carrinho`);
+            }
+            updateCart();
         });
 
-        continueShopping.addEventListener('click', () => {
-            cartOverlay.classList.remove('open');
+        document.getElementById('couponButton').addEventListener('click', () => {
+            const input = document.getElementById('couponInput');
+            if (input.value.trim().toUpperCase() === 'PIXEL10') {
+                couponApplied = true;
+                showToast('Cupom PIXEL10 aplicado: 10% de desconto');
+            } else {
+                couponApplied = false;
+                showToast('Cupom inválido');
+            }
+            updateCart();
         });
 
-        document.getElementById('checkoutButton').addEventListener('click', () => {
-            alert('Função de checkout não implementada nesta demo.');
+        checkoutButton.addEventListener('click', () => {
+            if (cart.length === 0) return;
+            showToast('Pedido confirmado! Nossa equipe entrará em contato.');
+            cart = [];
+            couponApplied = false;
+            document.getElementById('couponInput').value = '';
+            updateCart();
+            window.setTimeout(hideCart, 900);
         });
 
-        document.querySelectorAll('.cart-remove').forEach(button => {
-            button.addEventListener('click', () => {
-                const productName = button.closest('.cart-item').querySelector('h3').innerText;
-                cart = cart.filter(item => item.name !== productName);
-                cartCount.textContent = cart.length;
-                showToast(`${productName} removido do carrinho`);
-                updateCart();
+        cartButton.addEventListener('click', openCart);
+        closeCart.addEventListener('click', hideCart);
+        continueShopping.addEventListener('click', hideCart);
+        cartOverlay.addEventListener('click', event => {
+            if (event.target === cartOverlay) hideCart();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') hideCart();
+        });
+
+        const productDetailOverlay = document.getElementById('productDetailOverlay');
+        const detailClose = document.getElementById('detailClose');
+        const detailAddButton = document.getElementById('detailAddButton');
+        const detailWishlist = document.getElementById('detailWishlist');
+
+        const productDetails = {
+            'PC Gamer PixelGear Titan RTX': { category: 'Computadores gamers', description: 'Máquina preparada para jogos em alta resolução, transmissão ao vivo e criação de conteúdo, com montagem premium e testes completos.', installments: '10x sem juros', specs: { 'Processador': 'Intel Core i9 de 14ª geração', 'Placa de vídeo': 'NVIDIA GeForce RTX 5080', 'Memória': '64GB DDR5', 'Armazenamento': 'SSD NVMe 2TB', 'Refrigeração': 'Water Cooler 360mm', 'Fonte': '1000W 80 Plus Gold' } },
+            'Monitor Gamer UltraWide 240Hz': { category: 'Monitores', description: 'Monitor ultrawide curvo projetado para máxima imersão, resposta rápida e vantagem competitiva em jogos profissionais.', installments: '10x sem juros', specs: { 'Painel': 'OLED UltraWide', 'Resolução': '3440 × 1440', 'Taxa de atualização': '240Hz', 'Tempo de resposta': '1ms', 'Tecnologias': 'G-Sync e FreeSync', 'Conectividade': 'HDMI 2.1 e DisplayPort' } },
+            'Teclado Mecânico RGB Pro': { category: 'Teclados', description: 'Teclado mecânico robusto com acionamento preciso, iluminação personalizável e recursos para ambientes profissionais e competitivos.', installments: '6x sem juros', specs: { 'Tipo': 'Mecânico', 'Switch': 'Red linear', 'Layout': '104 teclas', 'Conectividade': 'USB-C', 'Iluminação': 'RGB personalizável', 'Estrutura': 'Alumínio anodizado' } },
+            'Mouse Gamer Wireless 26K DPI': { category: 'Mouses', description: 'Mouse sem fio extremamente leve, com sensor de precisão e autonomia prolongada para sessões intensas de jogo.', installments: '6x sem juros', specs: { 'Sensor': 'Apex Sensor óptico', 'Sensibilidade': 'Até 26.000 DPI', 'Polling rate': '1000Hz', 'Peso': '55g', 'Autonomia': 'Até 70 horas', 'Conectividade': 'Wireless 2.4GHz e Bluetooth' } },
+            'Headset Surround 7.1 Spatial': { category: 'Áudio gamer', description: 'Headset com áudio espacial, microfone removível e construção confortável para jogos, chamadas e transmissões.', installments: '6x sem juros', specs: { 'Som': 'Surround 7.1 espacial', 'Drivers': 'Neodímio de 50mm', 'Microfone': 'Cancelamento de ruído', 'Conectividade': 'USB e P2', 'Compatibilidade': 'PC, PS5, Xbox e Switch', 'Construção': 'Espuma viscoelástica' } },
+            'Cadeira Gamer Racing Pro': { category: 'Ergonomia', description: 'Cadeira ergonômica com ajustes precisos e apoio lombar para conforto prolongado em partidas e longas jornadas de trabalho.', installments: '10x sem juros', specs: { 'Apoios': 'Braços ajustáveis 4D', 'Reclinação': 'Até 180°', 'Pistão': 'Classe 4', 'Estrutura': 'Aço reforçado', 'Revestimento': 'Couro sintético PU', 'Capacidade': 'Até 150kg' } },
+            'Teclado Gamer Compacto RGB 60%': { category: 'Teclados', description: 'Teclado compacto de 60% desenvolvido para liberar espaço na mesa sem abrir mão da experiência mecânica e RGB.', installments: '6x sem juros', specs: { 'Formato': '60%', 'Tipo': 'Mecânico', 'Iluminação': 'RGB por tecla', 'Conectividade': 'USB-C e Bluetooth', 'Membranas programáveis': 'Sim', 'Compatibilidade': 'Windows e macOS' } },
+            'Mouse Gamer Precision 18K DPI': { category: 'Mouses', description: 'Mouse leve com sensor preciso, formatado para movimentos rápidos e controle consistente em diferentes estilos de jogo.', installments: '4x sem juros', specs: { 'Sensor': 'Óptico de alta precisão', 'Sensibilidade': 'Até 18.000 DPI', 'Botões': '6 programáveis', 'Peso': '68g', 'Polling rate': '1000Hz', 'Conectividade': 'USB 2.0' } },
+            'Mousepad Gamer Control XL': { category: 'Mousepads', description: 'Superfície XL de baixa fricção desenvolvida para precisão uniforme de mouse, com base antiderrapante em borracha.', installments: '3x sem juros', specs: { 'Dimensões': '900 × 400mm', 'Espessura': '4mm', 'Superfície': 'Tecido control', 'Base': 'Borracha antiderrapante', 'Costuras': 'Bordas reforçadas', 'Limpeza': 'Lavável' } },
+            'Microfone Condensador Studio RGB': { category: 'Microfones', description: 'Microfone condensador com qualidade de estúdio, ideal para lives, podcasts, reuniões e gravações profissionais.', installments: '8x sem juros', specs: { 'Padrão polar': 'Cardioide', 'Conexão': 'USB-C', 'Taxa de amostragem': '96kHz / 24-bit', 'Iluminação': 'RGB', 'Monitoramento': 'Entrada de fone integrada', 'Acessórios': 'Tripé e filtro incluso' } },
+            'Webcam Full HD para Streaming': { category: 'Câmeras', description: 'Webcam Full HD com foco nítido e imagem ajustável para transmissões, aulas e reuniões com qualidade profissional.', installments: '6x sem juros', specs: { 'Resolução': 'Full HD 1080p', 'Taxa de gravação': '60fps', 'Foco': 'Automático', 'Microfone': 'Duplo integrado', 'Campo de visão': '90°', 'Compatibilidade': 'Windows, macOS e Linux' } },
+            'Controle Wireless Pro Hall Effect': { category: 'Controles', description: 'Controle wireless com tecnologia Hall Effect para maior durabilidade, menor deriva e resposta consistente.', installments: '5x sem juros', specs: { 'Tecnologia': 'Gatilhos Hall Effect', 'Conectividade': 'Bluetooth e USB-C', 'Autonomia': 'Até 20 horas', 'Vibração': 'Dupla e ajustável', 'Compatibilidade': 'PC e dispositivos móveis', 'Extras': 'Botões traseiros programáveis' } }
+        };
+
+        function closeProductDetail() {
+            productDetailOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function openProductDetail(productName, card) {
+            const details = productDetails[productName] || {
+                category: card.querySelector('.product-category')?.textContent || 'PixelGear',
+                description: 'Produto selecionado da curadoria PixelGear, desenvolvido para oferecer performance, qualidade e excelente experiência.',
+                installments: 'Consulte as condições',
+                specs: { 'Categoria': 'Hardware gamer', 'Garantia': '12 meses', 'Entrega': 'Envio seguro', 'Suporte': 'Especializado', 'Pagamentos': 'Cartão e PIX', 'Disponibilidade': 'Estoque limitado' }
+            };
+
+            document.getElementById('detailCategory').textContent = details.category;
+            document.getElementById('detailImage').src = card.querySelector('img').src;
+            document.getElementById('detailImage').alt = productName;
+            document.getElementById('detailTitle').textContent = productName;
+            document.getElementById('detailDescription').textContent = details.description;
+            document.getElementById('detailPrice').textContent = card.querySelector('.product-price strong').textContent;
+            document.getElementById('detailInstallments').textContent = details.installments;
+
+            const specsList = document.getElementById('detailSpecs');
+            specsList.innerHTML = Object.entries(details.specs).map(([label, value]) =>
+                `<li><span>${label}</span><strong>${value}</strong></li>`
+            ).join('');
+
+            productDetailOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        detailClose.addEventListener('click', closeProductDetail);
+        productDetailOverlay.addEventListener('click', event => {
+            if (event.target === productDetailOverlay) closeProductDetail();
+        });
+
+        detailAddButton.addEventListener('click', () => {
+            const productName = document.getElementById('detailTitle').textContent;
+            const matchingCard = [...document.querySelectorAll('.product-card')].find(card => card.querySelector('h3').textContent === productName);
+            const addButton = matchingCard?.querySelector('.add-button');
+            closeProductDetail();
+            if (addButton) addButton.click();
+        });
+
+        detailWishlist.addEventListener('click', () => {
+            detailWishlist.textContent = detailWishlist.textContent === '♡' ? '♥' : '♡';
+            showToast(detailWishlist.textContent === '♥' ? 'Produto salvo nos favoritos' : 'Produto removido dos favoritos');
+        });
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', event => {
+                if (event.target.closest('.add-button')) return;
+                openProductDetail(card.querySelector('h3').textContent, card);
             });
         });
 
-        document.getElementById('cartCount').addEventListener('click', () => {
-            cartOverlay.classList.add('open');
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && productDetailOverlay.classList.contains('open')) closeProductDetail();
         });
     </script>
 
