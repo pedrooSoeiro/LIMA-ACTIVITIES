@@ -471,6 +471,8 @@
             .detail-content { padding: 26px 20px 24px; }
             .detail-content h2 { font-size: 28px; }
         }
+
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     </style>
 </head>
 
@@ -494,7 +496,7 @@
             </div>
         </aside>
 
-        <main class="login-panel">
+        <div class="login-panel">
             <form class="login-card" id="loginForm">
                 <h2>Bem-vindo de volta</h2>
                 <p>Acesse sua conta para continuar.</p>
@@ -513,7 +515,7 @@
                 <button class="primary-button" type="submit">Entrar na plataforma</button>
                 <button class="secondary-button guest-button" id="guestButton" type="button">Explorar como visitante</button>
             </form>
-        </main>
+        </div>
     </div>
 
     <div class="app">
@@ -625,6 +627,7 @@
             </section>
 
             <section class="container" id="diferenciais">
+                <h2 class="sr-only">Diferenciais da PixelGear</h2>
                 <div class="trust-strip">
                     <div class="trust-item"><strong>+2.500</strong><span>Setups montados e testados</span></div>
                     <div class="trust-item"><strong>48 meses</strong><span>Garantia estendida disponível</span></div>
@@ -712,11 +715,11 @@
             </div>
             <div class="detail-layout">
                 <div class="detail-gallery">
-                    <img id="detailImage" src="" alt="">
+                    <img id="detailImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23eff1f3'/%3E%3C/svg%3E" alt="Detalhes do produto">
                 </div>
                 <div class="detail-content">
                     <span class="detail-category" id="detailCategory"></span>
-                    <h2 id="detailTitle"></h2>
+                    <h2 id="detailTitle">Detalhes do produto</h2>
                     <p class="detail-description" id="detailDescription"></p>
                     <div class="detail-price">
                         <strong id="detailPrice"></strong>
