@@ -1,0 +1,193 @@
+/* Define cores, fonte e largura máxima da página */
+body {
+    background-color: #111111;
+    color: #cccccc;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 10px;
+    max-width: 960px;
+}
+
+/* Padroniza a fonte dos títulos, legendas e botões */
+h1, h2, h3, h4, legend, button, .btn-cta {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estiliza o título principal */
+h1 {
+    color: #00ff00;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+/* Estiliza os subtítulos de seção sem caixas ou bordas laterais */
+h2 {
+    color: #00ccff;
+    font-size: 20px;
+    margin-top: 25px;
+    text-decoration: underline;
+}
+
+/* Define a cor dos títulos menores */
+h3, h4, .destaque-azul {
+    color: #ffff00;
+}
+
+/* Estiliza a linha divisória */
+hr {
+    border: 1px solid #444444;
+    margin: 20px 0;
+}
+
+/* Estiliza e separa cada bloco de produto em destaque */
+.card-destaque {
+    background-color: #1a1a1a;
+    border: 2px solid #555555;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* Exibe a imagem de cada produto em bloco com borda reta */
+.card-destaque img {
+    border: 2px solid #888888;
+    border-radius: 0;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Destaca os preços em verde */
+.preco-destaque {
+    color: #00ff00;
+    font-size: 16px;
+}
+
+/* Espaçamento do bloco de botões */
+.acoes-cta {
+    margin: 15px 0;
+}
+
+/* Estilo base dos links de ação */
+.btn-cta {
+    border-radius: 0;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    padding: 8px 12px;
+    text-decoration: underline;
+}
+
+/* Cores do botão de compra */
+.btn-whatsapp {
+    background-color: #008000;
+    border: 2px outset #00cc00;
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background-color: #006600;
+}
+
+/* Cores do botão de suporte */
+.btn-suporte {
+    background-color: #333333;
+    border: 2px outset #777777;
+    color: #ffff00;
+}
+
+.btn-suporte:hover {
+    background-color: #444444;
+}
+
+/* Cores padrão dos links */
+a {
+    color: #00ccff;
+}
+
+a:visited {
+    color: #cc66ff;
+}
+
+a:hover {
+    color: #ffff00;
+}
+
+/* Estiliza a tabela e unifica suas bordas */
+table {
+    background-color: #1a1a1a;
+    border: 2px solid #777777;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Estiliza células e cabeçalhos da tabela */
+th, td {
+    border: 1px solid #666666;
+    padding: 6px;
+    text-align: left;
+}
+
+th {
+    background-color: #333333;
+    color: #ffff00;
+}
+
+/* Estiliza os grupos de campos do formulário */
+fieldset {
+    background-color: #181818;
+    border: 2px groove #666666;
+    border-radius: 0;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* Estiliza o título de cada grupo do formulário */
+legend {
+    color: #00ff00;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+/* Estiliza caixas de texto e seleção */
+input, select, textarea {
+    background-color: #eeeeee;
+    border: 2px inset #888888;
+    border-radius: 0;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    padding: 3px;
+}
+
+/* Estiliza os botões do formulário */
+button {
+    background-color: #cccccc;
+    border: 2px outset #ffffff;
+    border-radius: 0;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 8px;
+    padding: 6px 12px;
+}
+
+/* Efeito de clique nos botões */
+button:active {
+    border-style: inset;
+}
+
+/* Diferencia a cor do botão de limpar */
+button[type="reset"] {
+    background-color: #999999;
+}
+
+/* Estiliza o rodapé */
+footer {
+    border-top: 1px solid #444444;
+    color: #777777;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: left;
+}
